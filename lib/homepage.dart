@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     File file = File("assets/dictionary");
     List<String> words = file.readAsLinesSync();
-    ScrolCont
+    final controller = ScrollController();
 
     return Scaffold(
       body: SafeArea(
