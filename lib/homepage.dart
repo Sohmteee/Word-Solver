@@ -13,11 +13,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     File file = File("assets/dictionary");
     List<String> words = file.readAsLinesSync();
-    final controller = ScrollController();
+    final word = TextEditingController();
 
     return Scaffold(
       body: SafeArea(
-        child: ,
+        child: Column(
+          children: [
+            TextField(
+              controller: word,
+              decoration: Input,
+            ),
+          ],
+        ),
       ),
     );
   }
