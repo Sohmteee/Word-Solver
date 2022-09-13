@@ -21,7 +21,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextField(
               controller: word,
-              decoration: Input,
+              decoration: InputDecoration(
+                border: ,
+              ),
             ),
           ],
         ),
