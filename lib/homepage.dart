@@ -13,10 +13,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     File file = File("assets/dictionary");
     List<String> words = file.readAsLinesSync();
+    ScrolCont
 
     return Scaffold(
       body: SafeArea(
         child: ListView.builder(
+          controller: controller,
           itemCount: words.length,
           itemBuilder: (_, index) => ListTile(
             title: Text(words[index]),
