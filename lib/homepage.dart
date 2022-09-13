@@ -14,6 +14,14 @@ class _HomePageState extends State<HomePage> {
     File file = File("assets/dictionary");
     List<String> words = file.readAsLinesSync();
 
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: ListView.builder(
+          itemBuilder: (_, index){
+            
+          },
+        ),
+      ),
+    );
   }
 }
