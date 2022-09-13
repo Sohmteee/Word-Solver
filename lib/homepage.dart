@@ -17,13 +17,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       body: SafeArea(
-        child: ListView.builder(
-          controller: controller,
-          itemCount: words.length,
-          itemBuilder: (_, index) => ListTile(
-            title: Text(words[index]),
-          ),
-        ),
+        child: ,
       ),
     );
   }
