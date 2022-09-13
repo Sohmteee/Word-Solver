@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 Future<void> main() async {
-    var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
-    File file = File(filePath);
-    List<Future<String>> words = file.readAsLines();
+  var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
+  File file = File(filePath);
+  List<String> words = await file.readAsLinesSync();
   runApp(const MyApp());
 }
 

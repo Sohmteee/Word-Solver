@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Future<Widget> build(BuildContext context) {
+  Widget build(BuildContext context) {
     final word = TextEditingController();
 
     return Scaffold(
