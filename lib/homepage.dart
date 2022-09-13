@@ -21,11 +21,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextField(
               controller: word,
-              decoration: InputDecoration(
-                autofocus: true,
+              autofocus: true,
                   onChanged: (value) => setState(() {
-                    gitExists = Directory("$path\\.git").existsSync();
-                    path = value.trim();
                   }),
                   style: const TextStyle(
                     fontSize: 16,
@@ -38,13 +35,6 @@ class _HomePageState extends State<HomePage> {
                     //add prefix icon
                     prefixIcon: IconButton(
                       onPressed: () async {
-                        path = await FlutterDesktopFolderPicker
-                            .openFolderPickerDialog();
-                        setState(() {
-                          gitExists = Directory("$path\\.git").existsSync();
-                          debugPrint("Path: $path");
-                          dir.text = path!;
-                        });
                       },
                       hoverColor: Colors.white,
                       icon: const Icon(
@@ -63,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     fillColor: Colors.grey,
-                    errorText: (dir.text.trim() == "" || path == null)
+                    errorText: (word.text.trim() == "" || path == null)
                         ? "Choose or paste the directory of your project"
                         : null,
                     hintText: "Paste directory to your project",
@@ -85,8 +75,6 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  
-              ),
             ),
           ],
         ),
