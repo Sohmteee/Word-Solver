@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    File file = File("assets/dictionary");
+    var filePath = p.join(Directory.current.path, 'assets', 'sample.txt');
+    File file = File(filePath);
     List<String> words = file.readAsLinesSync();
     final word = TextEditingController();
 
