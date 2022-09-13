@@ -12,8 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     File file = File("assets/dictionary");
-    var words = file.readAsLinesSync);
-    print(words);
+    List<String> words = file.readAsLinesSync();
 
     return Scaffold();
   }
