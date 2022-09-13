@@ -1,9 +1,9 @@
 import 'dart:io';
-
+import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
-void main() {
+Future<void> main() async {
     var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
     File file = File(filePath);
     List<String> words = await file.readAsLinesSync();
