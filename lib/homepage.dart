@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () async {},
                   hoverColor: Colors.white,
                   icon: const Icon(
-                    Icons.,
+                    Icons.edit,
                     color: Colors.grey,
                   ),
                 ),
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 //create label
-                labelText: 'Project Directory',
+                labelText: 'Letters',
 
                 //label style
                 labelStyle: const TextStyle(
