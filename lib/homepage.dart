@@ -11,10 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) {
-    var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
-    File file = File(filePath);
-    List<String> words = file.readAsLinesSync();
+  Future<Widget> build(BuildContext context) {
     final word = TextEditingController();
 
     return Scaffold(
