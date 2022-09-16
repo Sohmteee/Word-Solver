@@ -59,7 +59,16 @@ class _HomePageState extends State<HomePage> {
                       selectedSize = value as String?;
                     }),
                   ),
-                  selectedSize
+                  selectedSize == "Range"
+                      ? Row()
+                      : TextField(
+                          controller: word,
+                          autofocus: true,
+                          decoration: InputDecoration(
+                              fillColor: Colors.green.shade100,
+                              border: InputBorder.none,
+                              hintText: "Type in a bunch of letters"),
+                        ),
                 ],
               )
             ],
