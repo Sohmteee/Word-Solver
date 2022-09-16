@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 70,
+                              width: 100,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Container(
-                              width: 70,
+                              width: 100,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
