@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.h),
+          padding: EdgeInsets.all(10.h),
           child: Column(
             children: [
               //textfield for the letters
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 100,
+                              width: 100.w,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Container(
-                              width: 100,
+                              width: 100.w,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
