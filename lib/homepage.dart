@@ -61,9 +61,29 @@ class _HomePageState extends State<HomePage> {
                   ),
                   selectedSize == "Range"
                       ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 200,
+                              width: 70,
+                              margin: const EdgeInsets.symmetric(vertical: 20),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade100,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: TextField(
+                                controller: word,
+                                autofocus: true,
+                                decoration: InputDecoration(
+                                    fillColor: Colors.green.shade100,
+                                    border: InputBorder.none,
+                                    hintText: "Type in a bunch of letters"),
+                              ),
+                            ),
+                            Container(
+                              width: 70,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
