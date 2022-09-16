@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'data.dart';
 
@@ -16,14 +15,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10.h),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               //textfield for the letters
               Container(
-                margin: EdgeInsets.symmetric(vertical: 20.h),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.h,
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
@@ -65,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              width: 100.w,
+                              width: 100,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
@@ -84,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Container(
-                              width: 100.w,
+                              width: 100,
                               margin: const EdgeInsets.symmetric(vertical: 20),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
