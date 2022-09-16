@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SizeTextField extends StatefulWidget {
-  const SizeTextField({Key? key}) : super(key: key);
+  const SizeTextField({
+    Key? key,
+    required this.controller,
+    required this.hintText,
+  }) : super(key: key);
 
-  final TextEditingController
+  final TextEditingController controller;
+  final String hintText;
 
   @override
   State<SizeTextField> createState() => _SizeTextFielddState();
@@ -23,7 +28,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        controller: controller,
+        controller: widget.controller,
         autofocus: true,
         decoration: InputDecoration(
             fillColor: Colors.green.shade100,
