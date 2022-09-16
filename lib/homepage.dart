@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:word_solver/widgets/size_textfield.dart';
 
 import 'data.dart';
 
@@ -63,24 +64,9 @@ class _HomePageState extends State<HomePage> {
                       ? Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Container(
-                              width: 100,
-                              margin: const EdgeInsets.symmetric(vertical: 20),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade100,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: TextField(
-                                controller: word,
-                                autofocus: true,
-                                decoration: InputDecoration(
-                                    fillColor: Colors.green.shade100,
-                                    border: InputBorder.none,
-                                    hintText: "Min"),
-                              ),
+                            SizeTextField(
+                              controller: min,
+                              hintText: "Min",
                             ),
                             Container(
                               width: 100,

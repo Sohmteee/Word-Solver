@@ -31,9 +31,10 @@ class _SizeTextFielddState extends State<SizeTextField> {
         controller: widget.controller,
         autofocus: true,
         decoration: InputDecoration(
-            fillColor: Colors.green.shade100,
-            border: InputBorder.none,
-            hintText: "Min"),
+          fillColor: Colors.green.shade100,
+          border: InputBorder.none,
+          hintText: widget.hintText,
+        ),
       ),
     );
   }
