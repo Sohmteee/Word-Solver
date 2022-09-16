@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'data.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -10,67 +12,52 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final word = TextEditingController();
-
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            TextField(
-              controller: word,
-              autofocus: true,
-              onChanged: (value) => setState(() {}),
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.w400,
-              ),
-              decoration: InputDecoration(
-                focusColor: Colors.white,
-
-                //add prefix icon
-                prefixIcon: IconButton(
-                  onPressed: () async {},
-                  hoverColor: Colors.white,
-                  icon: const Icon(
-                    Icons.edit,
-                    color: Colors.grey,
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              //textfield for the letters
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
                 ),
-
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(20),
                 ),
-
-                focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.blue, width: 1.0),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                fillColor: Colors.grey,
-                errorText: (word.text.trim() == "")
-                    ? "Choose or paste the directory of your project"
-                    : null,
-                hintText: "Paste directory to your project",
-
-                //make hint text
-                hintStyle: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-
-                //create label
-                labelText: 'Letters',
-
-                //label style
-                labelStyle: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                child: TextField(
+                  controller: word,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.green.shade100,
+                      border: InputBorder.none,
+                      hintText: "Type in a bunch of letters"),
                 ),
               ),
-            ),
-          ],
+
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text("Select the size of the output"),
+              ),
+
+              DropdownButton(
+                borderRadius: BorderRadius.circular(10),
+                value: selectedSize,
+                items: sizes
+                    .map((size) => DropdownMenuItem<String>(
+                          value: size,
+                          child: Text(size),
+                        ))
+                    .toList(),
+                onChanged: (value) => setState(() {
+                  selectedSize = value as String?;
+                }),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 Future<void> main() async {
+  runApp(const MyApp());
+
   var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
   File file = File(filePath);
   List<String> words = await file.readAsLinesSync();
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
