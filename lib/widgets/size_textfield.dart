@@ -19,7 +19,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.w,
+      width: 70.w,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -31,7 +31,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
       child: TextField(
         controller: widget.controller,
         autofocus: true,
-        
+        textAlign: TextAlign.center,
         decoration: InputDecoration(
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
