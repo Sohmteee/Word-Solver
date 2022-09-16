@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'data.dart';
 
@@ -15,14 +16,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20.h),
           child: Column(
             children: [
               //textfield for the letters
               Container(
-                margin: const EdgeInsets.symmetric(vertical: 20),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                margin: EdgeInsets.symmetric(vertical: 20.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.h,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
