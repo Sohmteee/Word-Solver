@@ -72,25 +72,6 @@ class _HomePageState extends State<HomePage> {
                               controller: max,
                               hintText: "Max",
                             ),
-                            Container(
-                              width: 100,
-                              margin: const EdgeInsets.symmetric(vertical: 20),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade100,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: TextField(
-                                controller: word,
-                                autofocus: true,
-                                decoration: InputDecoration(
-                                    fillColor: Colors.green.shade100,
-                                    border: InputBorder.none,
-                                    hintText: "Max"),
-                              ),
-                            ),
                           ],
                         )
                       : Container(
