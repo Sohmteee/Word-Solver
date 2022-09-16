@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SizeTextField extends StatefulWidget {
   const SizeTextField({
@@ -18,7 +19,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      width: 100.w,
       margin: const EdgeInsets.symmetric(vertical: 20),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,

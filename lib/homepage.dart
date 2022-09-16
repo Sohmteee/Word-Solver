@@ -68,6 +68,10 @@ class _HomePageState extends State<HomePage> {
                               controller: min,
                               hintText: "Min",
                             ),
+                            SizeTextField(
+                              controller: max,
+                              hintText: "Max",
+                            ),
                             Container(
                               width: 100,
                               margin: const EdgeInsets.symmetric(vertical: 20),
