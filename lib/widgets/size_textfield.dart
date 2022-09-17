@@ -37,6 +37,12 @@ class _SizeTextFielddState extends State<SizeTextField> {
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         onChanged: (value) => setState(() {
+          switch (expression) {
+            case value:
+              
+              break;
+            default:
+          }
           displayResult();
         }),
         decoration: InputDecoration(
