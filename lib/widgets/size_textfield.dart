@@ -21,7 +21,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget.width!.w,
+      width: widget.width?.w,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
