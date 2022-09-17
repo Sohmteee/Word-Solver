@@ -21,9 +21,6 @@ class _HomePageState extends State<HomePage> {
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
 
-        print(letters);
-        print(lettersMap);
-
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           switch (selectedSize) {
             case "Range":
@@ -41,6 +38,8 @@ class _HomePageState extends State<HomePage> {
           }
 
           if (size.runtimeType == List<int>) {
+            print(letters);
+            print(lettersMap);
             for (String word in englishWords) {
               if (word.length >= size[0] && word.length <= size[1]) {
                 bool canMakeCurrentWord = true;
