@@ -18,8 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      Map<String, int> lettersMap =
-          getCharacterCount(letters);
+      Map<String, int> lettersMap = getCharacterCount(letters);
 
       bool canMakeCurrentWord = true;
 
@@ -37,6 +36,8 @@ class _HomePageState extends State<HomePage> {
             break;
           }
         }
+
+        if (canMakeCurrentWord) result.add(word);
       }
 
       if (letters != "") {
