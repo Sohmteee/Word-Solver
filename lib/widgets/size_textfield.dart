@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SizeTextField extends StatefulWidget {
-  SizeTextField({
+  const SizeTextField({
     Key? key,
     required this.controller,
     required this.hintText,
