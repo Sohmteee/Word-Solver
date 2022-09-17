@@ -42,11 +42,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
+
+              const SizedBox(height: 20),
+              
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Select the size of the output",
-                  style: TextStyle(fontSize: 20.sp),
+                  style: TextStyle(fontSize: 16.sp),
                 ),
               ),
 
