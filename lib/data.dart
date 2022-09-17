@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final word = TextEditingController();
+TextEditingController word;
 final min = TextEditingController();
 final max = TextEditingController();
 final limit = TextEditingController();
