@@ -37,6 +37,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         onChanged: (value) => setState(() {
+          widget.controller.text = value;
           displayResult();
         }),
         decoration: InputDecoration(
