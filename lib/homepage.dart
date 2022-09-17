@@ -41,7 +41,10 @@ class _HomePageState extends State<HomePage> {
         int count = 0;
         if (canMakeCurrentWord) {
           result.add(word);
+          count++;
         }
+
+        print(count);
       }
 
       if (letters != "") {
