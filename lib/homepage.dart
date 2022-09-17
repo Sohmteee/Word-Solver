@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    displayResult() {}
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -33,7 +35,10 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: word,
                   autofocus: true,
-                  onChanged: (value) => letters = value,
+                  onChanged: (value) {
+                    letters = value;
+                    displayResult();
+                  },
                   decoration: InputDecoration(
                     fillColor: Colors.green.shade100,
                     border: InputBorder.none,
