@@ -18,11 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Widget displayResult() {
       List<String> r = [];
-      if (letters != "" &&
-          (((size.runtimeType == List<int>) &&
-                  ((min.text.trim() != "" || min.text.isNotEmpty) &&
-                      (max.text.trim() != "" || max.text.isNotEmpty))) ||
-              (size.runtimeType == int))) {
+      if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
         print(letters);
         print(lettersMap);
