@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
+import 'package:path/path.dart' as p;
 
 import 'data.dart';
 
@@ -14,15 +17,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    readFile() {
+    readFile() async {
       var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
-  File file = File(filePath);
-  List<String> words = await file.readAsLines();
+      File file = File(filePath);
+      List<String> words = await file.readAsLines();
 
-  debugPrint("First word: ${words[0]}");
+      debugPrint("First word: ${words[0]}");
     }
 
     displayResult() {}
+    readFile();
 
     return Scaffold(
       body: SafeArea(

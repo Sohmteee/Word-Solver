@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
