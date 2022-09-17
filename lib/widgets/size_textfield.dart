@@ -6,7 +6,7 @@ class SizeTextField extends StatefulWidget {
     Key? key,
     required this.controller,
     required this.hintText,
-    this.width = 90,
+    this.width = 80,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -38,7 +38,6 @@ class _SizeTextFielddState extends State<SizeTextField> {
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
           hintText: widget.hintText,
-          hintStyle: TextAlign.start,
           labelText: widget.hintText,
         ),
       ),
