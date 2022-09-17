@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
     Widget displayResult() {
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
+        List<String> r = [];
 
-        List<String> result = [];
         print(letters);
         print(lettersMap);
 
@@ -42,9 +42,11 @@ class _HomePageState extends State<HomePage> {
           }
 
           if (canMakeCurrentWord) {
-            result.add(word);
+            r.add(word);
           }
         }
+
+        result = r;
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           switch (selectedSize) {
