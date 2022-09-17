@@ -20,9 +20,9 @@ class _HomePageState extends State<HomePage> {
       Map<String, int> lettersMap = getCharacterCount(letters);
       print(lettersMap);
 
-      bool canMakeCurrentWord = true;
-
       for (String word in englishWords) {
+        bool canMakeCurrentWord = true;
+
         Map<String, int> wordMap = getCharacterCount(word);
 
         for (var char in lettersMap.keys) {
@@ -114,10 +114,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-
               const Divider(),
               const SizedBox(height: 20),
-
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -125,9 +123,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 16.sp),
                 ),
               ),
-
               const SizedBox(height: 20),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -163,22 +159,16 @@ class _HomePageState extends State<HomePage> {
                       : otherSizeTextField(selectedSize)
                 ],
               ),
-
               const SizedBox(height: 20),
-
               ElevatedButton(
                 onPressed: () {
                   display = true;
                 },
                 child: const Text("Generate"),
               ),
-
               const SizedBox(height: 20),
-
               const Divider(),
-
               const SizedBox(height: 20),
-
               Expanded(
                 child: displayResult(),
               ),
