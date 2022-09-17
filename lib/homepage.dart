@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         )
-                      : 
+                      : otherTextField(controller)
                 ],
               )
             ],
@@ -85,11 +85,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-otherTextField(controller) {
-  switch (controller) {
-    case limit:
-      return SizeTextField(controller: limit, hintText: hintText)
-      break;
-    default:
-  }
-}
+otherTextField(controller) => SizeTextField(controller: controller, hintText: controller.toString());
