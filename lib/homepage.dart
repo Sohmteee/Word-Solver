@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
     displayResult() {}
 
     return Scaffold(
@@ -105,7 +104,13 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 20),
 
-              englishWords.map((e) => ListTile();
+              ListView(
+                children: englishWords.map(
+                  (word) => ListTile(
+                    
+                  ),
+                ).toList(),
+              )
             ],
           ),
         ),
