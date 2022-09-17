@@ -9,9 +9,9 @@ Future<void> main() async {
 
   var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
   File file = File(filePath);
-  List<String> words = await file.readAsLinesSync();
+  Future<List> words = await file.readAsLinesSync();
 
-  debugPrint("First word: words[0]");
+  debugPrint("First word: ${words[0]}");
 }
 
 class MyApp extends StatelessWidget {
