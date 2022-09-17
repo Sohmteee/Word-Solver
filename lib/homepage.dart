@@ -37,7 +37,9 @@ class _HomePageState extends State<HomePage> {
               break;
           }
 
-          if (size.runtimeType == List<int>) {
+          
+
+          if (size.runtimeType == List) {
             print(letters);
             print(lettersMap);
             for (String word in englishWords) {
