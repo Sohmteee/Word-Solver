@@ -105,18 +105,21 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
 
               Expanded(
-                child: ListView(
-                  children: result.isNotEmpty
-                      ? englishWords
-                          .map(
-                            (word) => ListTile(
-                              title: Center(
-                                child: Text(word),
+                child: result.isNotEmpty
+                    ? ListView(
+                        children: englishWords
+                            .map(
+                              (word) => ListTile(
+                                title: Center(
+                                  child: Text(word),
+                                ),
                               ),
-                            ),
-                          )
-                          .toList() ,
-                ),
+                            )
+                            .toList(),
+                      )
+                    : const Center(
+                        child: Text("No word matches your parameters"),
+                      ),
               ),
             ],
           ),
