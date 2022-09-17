@@ -45,10 +45,13 @@ class _HomePageState extends State<HomePage> {
                 child: Text("Select the size of the output"),
               ),
 
+              const SizedBox(height: 20),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   DropdownButton(
+                    
                     borderRadius: BorderRadius.circular(10),
                     value: selectedSize,
                     items: sizes
