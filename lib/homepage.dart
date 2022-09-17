@@ -66,7 +66,17 @@ class _HomePageState extends State<HomePage> {
             result = r;
           }
         } else {
-          print("else block executed");
+          switch (selectedSize) {
+          case "Limit":
+            size = int.parse(limit.text.trim());
+            break;
+          case "Exact Value":
+            size = int.parse(exact.text.trim());
+            break;
+          case "All":
+            size = int.parse(all.text.trim());
+            break;
+        }
         }
       }
 
