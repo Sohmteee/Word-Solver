@@ -97,12 +97,7 @@ otherSizeTextField(size) {
         controller: exact,
         hintText: size,
       );
-    case "All":
-      return SizeTextField(
-        controller: all,
-        hintText: size,
-      );
     default:
-    retrn null
+      return Container();
   }
 }
