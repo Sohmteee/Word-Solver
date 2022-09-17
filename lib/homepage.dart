@@ -73,9 +73,12 @@ class _HomePageState extends State<HomePage> {
                               child: Text(size),
                             ))
                         .toList(),
-                    onChanged: (value) => setState(() {
-                      selectedSize = value as String?;
-                    }),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedSize = value as String?;
+                      });
+                      displayResult();
+                    },
                   ),
                   selectedSize == "Range"
                       ? Row(
