@@ -34,7 +34,10 @@ class _SizeTextFielddState extends State<SizeTextField> {
         controller: widget.controller,
         autofocus: true,
         textAlign: TextAlign.center,
-        keyboardType: TextInputType.,
+        keyboardType: const TextInputType.numberWithOptions(
+          decimal: false,
+          signed: false,
+        ),
         decoration: InputDecoration(
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
