@@ -38,7 +38,6 @@ class _SizeTextFielddState extends State<SizeTextField> {
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
           hintText: widget.hintText,
-          hintStyle: TextStyle(fontSize: 20.sp),
           labelText: widget.hintText,
         ),
       ),
