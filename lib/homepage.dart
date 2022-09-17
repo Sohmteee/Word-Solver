@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           for (String letter in lettersMap.keys) {
             if (wordMap.containsKey(letter)) {
               if (lettersMap[letter]! > wordMap[letter]!) {
-                canMakeCurrentWord = false;
+                setst canMakeCurrentWord = false;
                 break;
               }
             } else {
