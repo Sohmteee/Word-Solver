@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   DropdownButton(
+                    style: TextStyle(),
                     borderRadius: BorderRadius.circular(10),
                     value: selectedSize,
                     items: sizes
