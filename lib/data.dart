@@ -13,4 +13,6 @@ List<String> sizes = [
   "Exact Value",
   "All",
 ];
+
 String? selectedSize = sizes[0];
+String? letters = "";
