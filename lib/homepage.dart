@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Widget displayResult() {
       List<String> r = [];
-      if (letters != "" ) {
+      if (letters != "" && (size.runtimeType == List<int>)) {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
         print(letters);
         print(lettersMap);
@@ -149,6 +149,10 @@ class _HomePageState extends State<HomePage> {
               break;
           }
         }
+      } else {
+        return const Center(
+          child: Text("No word matches your parameters"),
+        );
       }
 
       return result.isNotEmpty
