@@ -20,56 +20,53 @@ class _HomePageState extends State<HomePage> {
       List<String> r = [];
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
+        print(letters);
+        print(lettersMap);
 
-        if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
-          switch (selectedSize) {
-            case "Range":
-              size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
-              break;
-            case "Limit":
-              size = int.parse(limit.text.trim());
-              break;
-            case "Exact Value":
-              size = int.parse(exact.text.trim());
-              break;
-            case "All":
-              size = int.parse(all.text.trim());
-              break;
-          }
+        switch (selectedSize) {
+          case "Range":
+            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+            break;
+          case "Limit":
+            size = int.parse(limit.text.trim());
+            break;
+          case "Exact Value":
+            size = int.parse(exact.text.trim());
+            break;
+          case "All":
+            size = int.parse(all.text.trim());
+            break;
+        }
 
-          print(size.runtimeType);
+        print(size.runtimeType);
 
-          if (size.runtimeType == List) {
-            print(letters);
-            print(lettersMap);
-            for (String word in englishWords) {
-              if (word.length >= size[0] && word.length <= size[1]) {
-                bool canMakeCurrentWord = true;
-                Map<String, int> wordMap =
-                    getCharacterCount(word.toLowerCase());
+        if (size.runtimeType == List) {
+          for (String word in englishWords) {
+            if (word.length >= size[0] && word.length <= size[1]) {
+              bool canMakeCurrentWord = true;
+              Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
 
-                for (String letter in wordMap.keys) {
-                  if (lettersMap.containsKey(letter)) {
-                    if (wordMap[letter.toLowerCase()]! >
-                        lettersMap[letter.toLowerCase()]!) {
-                      canMakeCurrentWord = false;
-                      break;
-                    }
-                  } else {
+              for (String letter in wordMap.keys) {
+                if (lettersMap.containsKey(letter)) {
+                  if (wordMap[letter.toLowerCase()]! >
+                      lettersMap[letter.toLowerCase()]!) {
                     canMakeCurrentWord = false;
                     break;
                   }
-                }
-
-                if (canMakeCurrentWord) {
-                  r.add(word);
+                } else {
+                  canMakeCurrentWord = false;
+                  break;
                 }
               }
-              result = r;
+
+              if (canMakeCurrentWord) {
+                r.add(word);
+              }
             }
-          } else {
-            print("else block executed");
+            result = r;
           }
+        } else {
+          print("else block executed");
         }
       }
 
