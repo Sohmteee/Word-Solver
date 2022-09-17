@@ -17,9 +17,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Widget displayResult() {
+      List<String> r = [];
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
-        List<String> r = [];
+        
 
         print(letters);
         print(lettersMap);
@@ -66,8 +67,7 @@ class _HomePageState extends State<HomePage> {
           if (size.runtimeType == List<int>) {
             for (String word in englishWords) {
               if (word.length >= size[0] && word.length <= size[1]) {
-
-                result.add(word);
+                r.add(word);
               }
             }
           }
