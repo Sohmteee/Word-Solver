@@ -17,57 +17,58 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      Map<String, int> lettersMap = getCharacterCount(letters);
-      print(letters);
-      print(lettersMap);
+      if (letters != "") {
+        Map<String, int> lettersMap = getCharacterCount(letters);
+        print(letters);
+        print(lettersMap);
 
-      for (String word in englishWords) {
-        bool canMakeCurrentWord = true;
+        for (String word in englishWords) {
+          bool canMakeCurrentWord = true;
 
-        Map<String, int> wordMap = getCharacterCount(word);
+          Map<String, int> wordMap = getCharacterCount(word);
 
-        for (var char in lettersMap.keys) {
-          if (wordMap.containsKey(char)) {
-            if (lettersMap[char]! > wordMap[char]!) {
+          for (var char in lettersMap.keys) {
+            if (wordMap.containsKey(char)) {
+              if (lettersMap[char]! > wordMap[char]!) {
+                canMakeCurrentWord = false;
+                break;
+              }
+            } else {
               canMakeCurrentWord = false;
               break;
             }
-          } else {
-            canMakeCurrentWord = false;
-            break;
+          }
+
+          if (canMakeCurrentWord) {
+            result.add(word);
           }
         }
 
-        if (canMakeCurrentWord) {
-          result.add(word);
+        if (letters != "") {
+          switch (selectedSize) {
+            case "Range":
+              size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+              break;
+            case "Limit":
+              size = int.parse(limit.text.trim());
+              break;
+            case "Exact Value":
+              size = int.parse(exact.text.trim());
+              break;
+            case "All":
+              size = int.parse(all.text.trim());
+              break;
+          }
+
+          // if (size.runtimeType == List<int>) {
+          //   for (String word in englishWords) {
+          //     if (word.length >= size[0] && word.length <= size[1]) {
+
+          //       result.add(word);
+          //     }
+          //   }
+          // }
         }
-      }
-
-
-      if (letters != "") {
-        switch (selectedSize) {
-          case "Range":
-            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
-            break;
-          case "Limit":
-            size = int.parse(limit.text.trim());
-            break;
-          case "Exact Value":
-            size = int.parse(exact.text.trim());
-            break;
-          case "All":
-            size = int.parse(all.text.trim());
-            break;
-        }
-
-        // if (size.runtimeType == List<int>) {
-        //   for (String word in englishWords) {
-        //     if (word.length >= size[0] && word.length <= size[1]) {
-
-        //       result.add(word);
-        //     }
-        //   }
-        // }
       }
 
       return result.isNotEmpty
