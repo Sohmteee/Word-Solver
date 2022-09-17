@@ -18,11 +18,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Widget displayResult() {
       if (letters != "") {
-        Map<String, int> lettersMap = getCharacterCount(letters);
+        Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
         print(letters);
         print(lettersMap);
 
-        for (String word in englishWords) {
+        for (String word in englishWords.to) {
           bool canMakeCurrentWord = true;
           Map<String, int> wordMap = getCharacterCount(word);
 
