@@ -33,7 +33,11 @@ class _HomePageState extends State<HomePage> {
             break;
         }
 
-        if (size)
+        if (size.runtimeType == List<int>) {
+          for (var element in collection) {
+            
+          }
+        }
       }
 
       return result.isNotEmpty
