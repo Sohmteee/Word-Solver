@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      
+
       if (letters!.isNotEmpty) {
         switch (selectedSize) {
           case "Range":
@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
         if (size.runtimeType == List<int>) {
           for (String word in englishWords) {
             if (word.length >= size[0] && word.length <= size[1]) {
+              
               result.add(word);
             }
           }
