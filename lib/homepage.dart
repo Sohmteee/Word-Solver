@@ -42,31 +42,36 @@ class _HomePageState extends State<HomePage> {
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           if (size.runtimeType == List<int>) {
-            if ((min.text.trim() != "") && (max.text.trim() != "")) 
-            for (String word in englishWords) {
-              if (word.length >= size[0] && word.length <= size[1]) {
-                bool canMakeCurrentWord = true;
-                Map<String, int> wordMap =
-                    getCharacterCount(word.toLowerCase());
+            if ((min.text.trim() != "") && (max.text.trim() != "")) {
+              for (String word in englishWords) {
+                if (word.length >= size[0] && word.length <= size[1]) {
+                  bool canMakeCurrentWord = true;
+                  Map<String, int> wordMap =
+                      getCharacterCount(word.toLowerCase());
 
-                for (String letter in wordMap.keys) {
-                  if (lettersMap.containsKey(letter)) {
-                    if (wordMap[letter.toLowerCase()]! >
-                        lettersMap[letter.toLowerCase()]!) {
+                  for (String letter in wordMap.keys) {
+                    if (lettersMap.containsKey(letter)) {
+                      if (wordMap[letter.toLowerCase()]! >
+                          lettersMap[letter.toLowerCase()]!) {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    } else {
                       canMakeCurrentWord = false;
                       break;
                     }
-                  } else {
-                    canMakeCurrentWord = false;
-                    break;
+                  }
+
+                  if (canMakeCurrentWord) {
+                    r.add(word);
                   }
                 }
-
-                if (canMakeCurrentWord) {
-                  r.add(word);
-                }
+                result = r;
               }
-              result = r;
+            } else {
+              return const Center(
+                child: Text("No word matches your parameters"),
+              );
             }
           } else {
             switch (selectedSize) {
