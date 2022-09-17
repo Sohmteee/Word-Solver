@@ -38,7 +38,10 @@ class _HomePageState extends State<HomePage> {
           }
         }
 
-        if (canMakeCurrentWord) result.add(word);
+        int count = 0;
+        if (canMakeCurrentWord) {
+          result.add(word);
+        }
       }
 
       if (letters != "") {
