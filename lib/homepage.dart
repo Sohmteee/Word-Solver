@@ -24,18 +24,19 @@ class _HomePageState extends State<HomePage> {
       bool canMakeCurrentWord = true;
 
       for (String word in englishWords) {
-        Map<String, Int> wordMap =
-            getCharacterCount(word).cast<String, Int>();
-        
-        if (wordMap.containsKey(char)) {
-      if (lettersMap[char]! > wordMap[char]!) {
-        canMakeCurrentWord = false;
-        break;
-      }
-    } else {
-      canMakeCurrentWord = false;
-      break;
-    }
+        Map<String, int> wordMap = getCharacterCount(word);
+
+        for (var char in lettersMap.keys) {
+          if (wordMap.containsKey(char)) {
+            if (lettersMap[char]! > wordMap[char]!) {
+              canMakeCurrentWord = false;
+              break;
+            }
+          } else {
+            canMakeCurrentWord = false;
+            break;
+          }
+        }
       }
 
       if (letters != "") {
