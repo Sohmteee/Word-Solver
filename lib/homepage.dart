@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
                   decoration: InputDecoration(
                       fillColor: Colors.green.shade100,
                       border: InputBorder.none,
-                      hintText: "Type in a bunch of letters"),
+                      hintText: "Type in a bunch of letters",
+                      hintStyle: TextStyle(fontSize: 16.sp)),
                 ),
               ),
 
