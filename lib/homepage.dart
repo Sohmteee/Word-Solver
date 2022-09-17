@@ -89,8 +89,9 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
-              const Divider(),
               const SizedBox(height: 20),
+
+              const Divider(),
             ],
           ),
         ),
