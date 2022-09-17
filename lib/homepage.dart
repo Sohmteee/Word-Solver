@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:word_solver/extra_methods.dart';
+import 'package:word_solver/widgets/size_textfield.dart';
 import 'data/data.dart';
-import 'widgets/size_textfeild.dart';
+import 'data/english_words.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-         child: Padding(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
@@ -70,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                     onChanged: (String? value) {
                       setState(() {
                         selectedSize = value;
-                        displayResult();
+                        displayResult(context);
                       });
                     },
                   ),
@@ -94,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  displayResult();
+                  displayResult(context);
                 },
                 child: const Text("Generate"),
               ),
@@ -102,7 +104,7 @@ class _HomePageState extends State<HomePage> {
               const Divider(),
               const SizedBox(height: 20),
               Expanded(
-                child: displayResult(),
+                child: displayResult(context),
               ),
             ],
           ),
