@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
+Map<String, int> getCharacterCount(String letters) {
+  Map<String, int> countLetters = {};
 
-Map<Characters, int> getCharacterCount(String letters) {
-  Map<Characters, int> countLetters = {};
-  countLetters['e'] = 2;
-
-  for (int i = 0; i < letters.length(); i++) {
+  for (int i = 0; i < letters.length; i++) {
     char currentLetter = letters.charAt(i);
     int count = countLetters.getOrDefault(currentLetter, 0);
     countLetters.put(currentLetter, count + 1);

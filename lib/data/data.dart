@@ -15,8 +15,8 @@ List<String> sizes = [
   "Exact Value",
   "All",
 ];
-Map<Characters, Int> wordMap = {};
-Map<Characters, Int> lettersMap = {};
+Map<String, Int> wordMap = {};
+Map<String, Int> lettersMap = {};
 
 String? selectedSize = sizes[0];
 String? letters = "";
