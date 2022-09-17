@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 
 import 'data.dart';
@@ -99,6 +100,6 @@ otherSizeTextField(size) {
         hintText: size,
       );
     default:
-      return SizedBox();
+      return const SizedBox();
   }
 }
