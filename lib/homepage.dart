@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     displayResult() {
       Map<String, int> lettersMap = getCharacterCount(letters);
+      debugPrint(lettersMap);
 
       bool canMakeCurrentWord = true;
 
