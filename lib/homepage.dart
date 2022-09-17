@@ -35,7 +35,9 @@ class _HomePageState extends State<HomePage> {
 
         if (size.runtimeType == List<int>) {
           for (String word in englishWords) {
-            if (word.length >= size[0] && word.length <= wo){}
+            if (word.length >= size[0] && word.length <= size[1]) {
+              result.add(word);
+            }
           }
         }
       }
