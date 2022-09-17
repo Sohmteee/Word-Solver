@@ -104,12 +104,17 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 20),
 
-              ListView(
-                children: englishWords.map(
-                  (word) => ListTile(
-                    
-                  ),
-                ).toList(),
+              SizedBox(
+                height: 200,
+                child: ListView(
+                  children: englishWords
+                      .map(
+                        (word) => ListTile(
+                          title: Text(word),
+                        ),
+                      )
+                      .toList(),
+                ),
               )
             ],
           ),
