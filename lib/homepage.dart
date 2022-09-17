@@ -229,9 +229,9 @@ class _HomePageState extends State<HomePage> {
                               child: Text(size),
                             ))
                         .toList(),
-                    onChanged: (value) {
+                    onChanged: (String? value) {
                       setState(() {
-                        selectedSize = value as String?;
+                        selectedSize = value;
                         displayResult();
                       });
                     },
