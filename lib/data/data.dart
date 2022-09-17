@@ -21,6 +21,11 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String letters = "";
+int? sizeMin;
+int? sizeMax;
+int? sizeLimit;
+int? sizeExact;
+int? sizeAll;
 List<String> result = [];
 dynamic size;
 
@@ -34,25 +39,23 @@ Widget displayResult() {
     if ((min.text.trim() != "") && (max.text.trim() != "")) {
       switch (selectedSize) {
         case "Range":
-          size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+          size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
           break;
         case "Limit":
-          size = int.parse(limit.text.trim());
+          size = int.tryParse(limit.text.trim());
           break;
         case "Exact Value":
-          size = int.parse(exact.text.trim());
+          size = int.tryParse(exact.text.trim());
           break;
         case "All":
-          size = int.parse(all.text.trim());
+          size = int.tryParse(all.text.trim());
           break;
       }
     } else {
-        return const Center(
-          child: Text("No word matches your parameters"),
-        );
-      }
-
-    print(size.runtimeType);
+      return const Center(
+        child: Text("No word matches your parameters"),
+      );
+    }
 
     if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
       if (size.runtimeType == List<int>) {
