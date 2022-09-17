@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:word_solver/extra_methods.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 import 'data/data.dart';
 import 'data/english_words.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      
+      lettersMap = getCharacterCount(letters);
       if (letters!.isNotEmpty) {
         switch (selectedSize) {
           case "Range":
