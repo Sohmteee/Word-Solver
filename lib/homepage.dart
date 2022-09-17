@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
     }
 
     displayResult() {}
-    readFile();
 
     return Scaffold(
       body: SafeArea(
