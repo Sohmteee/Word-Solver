@@ -18,6 +18,6 @@ List<String> sizes = [
 Map<String, Int> wordMap = {};
 
 String? selectedSize = sizes[0];
-String? letters;
+String letters = "";
 List<String> result = [];
 dynamic size;

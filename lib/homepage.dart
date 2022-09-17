@@ -19,9 +19,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     displayResult() {
       Map<String, Int> lettersMap =
-          getCharacterCount(letters!).cast<String, Int>();
+          getCharacterCount(letters).cast<String, Int>();
 
-      if (letters!.isNotEmpty) {
+      if (letters.isNotEmpty) {
         switch (selectedSize) {
           case "Range":
             size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
