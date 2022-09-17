@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           }
         }
 
-        if (size.runtimeType==) {
+        if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           switch (selectedSize) {
             case "Range":
               size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
