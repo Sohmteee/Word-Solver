@@ -34,10 +34,11 @@ class _HomePageState extends State<HomePage> {
                   controller: word,
                   autofocus: true,
                   decoration: InputDecoration(
-                      fillColor: Colors.green.shade100,
-                      border: InputBorder.none,
-                      hintText: "Type in a bunch of letters",
-                      hintStyle: TextStyle(fontSize: 16.sp)),
+                    fillColor: Colors.green.shade100,
+                    border: InputBorder.none,
+                    hintText: "Type in a bunch of letters",
+                    hintStyle: TextStyle(fontSize: 16.sp),
+                  ),
                 ),
               ),
 
