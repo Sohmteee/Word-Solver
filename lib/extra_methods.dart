@@ -4,7 +4,7 @@ Map<String, int> getCharacterCount(String letters) {
   for (int i = 0; i < letters.length; i++) {
     String currentLetter = letters[i];
     int? count = countLetters[currentLetter];
-    countLetters.update(currentLetter, (value) => null));
+    countLetters.update(currentLetter, (value) => value + 1);
   }
 
   return countLetters;
