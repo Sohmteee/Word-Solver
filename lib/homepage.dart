@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 import 'data/data.dart';
+import 'data/english_words.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 20),
 
-              ListView.builder(english)
+              englishWords.map((e) => ListTile();
             ],
           ),
         ),
