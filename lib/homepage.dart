@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      if (letters.l) {
+      if (letters != "") {
         Map<String, Int> lettersMap =
             getCharacterCount(letters).cast<String, Int>();
       }
