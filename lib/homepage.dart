@@ -20,10 +20,13 @@ class _HomePageState extends State<HomePage> {
     displayResult() {
         Map<String, Int> lettersMap =
             getCharacterCount(letters).cast<String, Int>();
+        
       
 
       bool canMakeCurrentWord = true;
-            for (String character in lettersMap.keys) {
+            for (String character in wor) {
+              Map<String, Int> wordMap =
+            getCharacterCount(letters).cast<String, Int>();
                 Int? currentWordCharCount = lettersMap[character];
                 int lettersCharCount = lettersMap.getOrDefault(character, 0);
 
