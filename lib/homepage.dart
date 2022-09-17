@@ -46,7 +46,6 @@ class _HomePageState extends State<HomePage> {
           }
         }
 
-        result = r;
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           switch (selectedSize) {
@@ -74,6 +73,9 @@ class _HomePageState extends State<HomePage> {
           }
         }
       }
+
+      
+        result = r;
 
       return result.isNotEmpty
           ? ListView(
