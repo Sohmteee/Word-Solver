@@ -20,7 +20,8 @@ class _HomePageState extends State<HomePage> {
       List<String> r = [];
       if (letters != "" &&
           (((size.runtimeType == List<int>) &&
-                  ((min.text.trim() != "") && (max.text.trim() != ""))) ||
+                  ((min.text.trim() != "" || min.text.isNotEmpty) &&
+                      (max.text.trim() != "" || max.text.isNotEmpty))) ||
               (size.runtimeType == int))) {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
         print(letters);
