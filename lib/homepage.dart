@@ -106,15 +106,9 @@ class _HomePageState extends State<HomePage> {
 
               Expanded(
                 child: ListView(
-                  children: englishWords
-                      .map(
-                        (word) => ListTile(
-                          title: Text(word),
-                        ),
-                      )
-                      .toList(),
+                  children: ,
                 ),
-              )
+              ),
             ],
           ),
         ),
