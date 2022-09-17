@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
 
       return result.isNotEmpty
           ? ListView(
-              children: englishWords
+              children: res
                   .map(
                     (word) => ListTile(
                       title: Center(
