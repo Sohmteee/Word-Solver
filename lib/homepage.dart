@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 import 'package:path/path.dart' as p;
 
-import 'data.dart';
+import 'widgets/data/data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
