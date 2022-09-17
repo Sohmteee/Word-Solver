@@ -40,6 +40,14 @@ class _HomePageState extends State<HomePage> {
 
         print(size.runtimeType);
 
+        if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
+
+        } else {
+        return const Center(
+          child: Text("No word matches your parameters"),
+        );
+      }
+
         if (size.runtimeType == List<int>) {
           for (String word in englishWords) {
             if (word.length >= size[0] && word.length <= size[1]) {
