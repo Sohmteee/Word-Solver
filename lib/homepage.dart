@@ -16,7 +16,6 @@ class _HomePageState extends State<HomePage> {
   bool display = false;
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -97,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  display = true;
+                  displayResult();
                 },
                 child: const Text("Generate"),
               ),
