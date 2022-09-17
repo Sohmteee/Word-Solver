@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         )
-                      : otherTextField(controller)
+                      : otherTextField(selectedSize)
                 ],
               )
             ],
@@ -85,4 +85,11 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-otherTextField(controller) => SizeTextField(controller: controller, hintText: controller.toString());
+otherTextField(controller) {
+  switch (controller) {
+    case "Limit":
+      
+      break;
+    default:
+  }
+}
