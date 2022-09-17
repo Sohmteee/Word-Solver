@@ -106,7 +106,6 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       letters = value;
-                      displayResult();
                     });
                   },
                   decoration: InputDecoration(
@@ -147,7 +146,6 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         selectedSize = value as String?;
                       });
-                      displayResult();
                     },
                   ),
                   selectedSize == "Range"
@@ -170,7 +168,10 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 20),
 
-               ElevatedButton(onPressed: () {}, child: Text())
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text("Generate"),
+              ),
 
               const SizedBox(height: 20),
 
