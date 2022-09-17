@@ -6,12 +6,12 @@ class SizeTextField extends StatefulWidget {
     Key? key,
     required this.controller,
     required this.hintText,
-    this.width = ,
+    this.width = 70,
   }) : super(key: key);
 
   final TextEditingController controller;
   final String hintText;
-   double width = 70.w;
+  double width = 70.w;
 
   @override
   State<SizeTextField> createState() => _SizeTextFielddState();
@@ -21,7 +21,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70.w,
+      width: widget.width!.w,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
