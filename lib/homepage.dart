@@ -139,6 +139,7 @@ class _HomePageState extends State<HomePage> {
                     onChanged: (value) {
                       setState(() {
                         selectedSize = value as String?;
+                        displayResult();
                       });
                     },
                   ),
