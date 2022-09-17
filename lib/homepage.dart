@@ -18,23 +18,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-        Map<String, Int> lettersMap =
-            getCharacterCount(letters).cast<String, Int>();
-        
-      
+      Map<String, Int> lettersMap =
+          getCharacterCount(letters).cast<String, Int>();
 
       bool canMakeCurrentWord = true;
-            for (String character in wor) {
-              Map<String, Int> wordMap =
-            getCharacterCount(letters).cast<String, Int>();
-                Int? currentWordCharCount = lettersMap[character];
-                int lettersCharCount = lettersMap.getOrDefault(character, 0);
 
-                if (currentWordCharCount > lettersCharCount) {
-                    canMakeCurrentWord = false;
-                    break;
-                }
-            }
+      for (String word in englishWords) {
+        Map<String, Int> wordMap =
+            getCharacterCount(word).cast<String, Int>();
+        Int? currentWordCharCount = lettersMap[character];
+        int lettersCharCount = lettersMap.getOrDefault(character, 0);
+
+        if (currentWordCharCount > lettersCharCount) {
+          canMakeCurrentWord = false;
+          break;
+        }
+      }
 
       if (letters != "") {
         switch (selectedSize) {
