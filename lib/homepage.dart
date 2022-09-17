@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
         print(size.runtimeType);
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
-          if ((size.runtimeType == List<int>) &&
-              ((min.text.trim() != "") && (max.text.trim() != ""))) {
+          if (size.runtimeType == List<int>) {
+            if ((min.text.trim() != "") && (max.text.trim() != "")) 
             for (String word in englishWords) {
               if (word.length >= size[0] && word.length <= size[1]) {
                 bool canMakeCurrentWord = true;
