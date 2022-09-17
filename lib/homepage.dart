@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     displayResult() {
       Map<String, Int> lettersMap = getCharacterCount(letters);
+
       if (letters!.isNotEmpty) {
         switch (selectedSize) {
           case "Range":
