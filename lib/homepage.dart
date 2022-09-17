@@ -32,11 +32,13 @@ class _HomePageState extends State<HomePage> {
             size = int.parse(all.text.trim());
             break;
         }
+
+        if (size)
       }
 
       return result.isNotEmpty
           ? ListView(
-              children: res
+              children: result
                   .map(
                     (word) => ListTile(
                       title: Center(
