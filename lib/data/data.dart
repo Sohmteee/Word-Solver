@@ -16,6 +16,5 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String? letters = "";
-List<int> range = [];
 List<String> result = [];
-dynamic size = 0;
+dynamic size;

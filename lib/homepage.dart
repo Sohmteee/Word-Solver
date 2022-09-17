@@ -15,6 +15,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
+      
+
       return result.isNotEmpty
           ? ListView(
               children: englishWords
