@@ -19,6 +19,8 @@ class _HomePageState extends State<HomePage> {
     Widget displayResult() {
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
+
+        List<String> result = [];
         print(letters);
         print(lettersMap);
 
@@ -28,7 +30,8 @@ class _HomePageState extends State<HomePage> {
 
           for (String letter in wordMap.keys) {
             if (lettersMap.containsKey(letter)) {
-              if (wordMap[letter.toLowerCase()]! > lettersMap[letter.toLowerCase()]!) {
+              if (wordMap[letter.toLowerCase()]! >
+                  lettersMap[letter.toLowerCase()]!) {
                 canMakeCurrentWord = false;
                 break;
               }
