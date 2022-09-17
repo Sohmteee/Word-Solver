@@ -36,8 +36,10 @@ class _HomePageState extends State<HomePage> {
                   controller: word,
                   autofocus: true,
                   onChanged: (value) {
-                    letters = value;
-                    displayResult();
+                    setState(() {
+                      letters = value;
+                      displayResult();
+                    });
                   },
                   decoration: InputDecoration(
                     fillColor: Colors.green.shade100,
