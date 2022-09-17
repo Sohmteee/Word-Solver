@@ -26,9 +26,9 @@ class _HomePageState extends State<HomePage> {
           bool canMakeCurrentWord = true;
           Map<String, int> wordMap = getCharacterCount(word);
 
-          for (var char in lettersMap.keys) {
-            if (wordMap.containsKey(char)) {
-              if (lettersMap[char]! > wordMap[char]!) {
+          for (var letter in lettersMap.keys) {
+            if (wordMap.containsKey(letter)) {
+              if (lettersMap[letter]! > wordMap[letter]!) {
                 canMakeCurrentWord = false;
                 break;
               }
