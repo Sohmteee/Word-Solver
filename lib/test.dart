@@ -1,5 +1,11 @@
-void main(List<String> args) {
-  var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
+
+Future<void> main(List<String> args) async {
+  var filePath = "assets/dictionary";
   File file = File(filePath);
   List<String> words = await file.readAsLines();
+
+  debugPrint(words[0]);
 }
