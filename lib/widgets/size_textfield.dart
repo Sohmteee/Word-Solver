@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SizeTextField extends StatefulWidget {
-  SizeTextField({
+  const SizeTextField({
     Key? key,
     required this.controller,
     required this.hintText,
@@ -11,7 +11,7 @@ class SizeTextField extends StatefulWidget {
 
   final TextEditingController controller;
   final String hintText;
-  double width = 70.w;
+  final double? width;
 
   @override
   State<SizeTextField> createState() => _SizeTextFielddState();
@@ -21,7 +21,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget.width.w,
+      width: widget.width!.w,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
