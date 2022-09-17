@@ -16,4 +16,5 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String? letters = "";
-int[] range = [];
+List<int> range = [];
+int size = 0;
