@@ -77,10 +77,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Dosis
+    - family: Sansita
       fonts:
-        - asset: assets/fonts/Dosis-Regular.ttf
-        - asset: assets/fonts/Dosis-Bold.ttf
+        - asset: assets/fonts/Sansita-Regular.ttf
+        - asset: assets/fonts/Sansita-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
