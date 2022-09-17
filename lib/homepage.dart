@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               break;
           }
 
-          
+          print(size.runtimeType);
 
           if (size.runtimeType == List) {
             print(letters);
