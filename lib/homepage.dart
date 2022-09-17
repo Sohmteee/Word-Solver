@@ -15,7 +15,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      
+      switch (selectedSize) {
+        case "Range":
+          size = [];
+          break;
+        default:
+      }
 
       return result.isNotEmpty
           ? ListView(
