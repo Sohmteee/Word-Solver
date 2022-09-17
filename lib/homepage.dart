@@ -20,33 +20,9 @@ class _HomePageState extends State<HomePage> {
       List<String> r = [];
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
-        
 
         print(letters);
         print(lettersMap);
-
-        for (String word in englishWords) {
-          bool canMakeCurrentWord = true;
-          Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
-
-          for (String letter in wordMap.keys) {
-            if (lettersMap.containsKey(letter)) {
-              if (wordMap[letter.toLowerCase()]! >
-                  lettersMap[letter.toLowerCase()]!) {
-                canMakeCurrentWord = false;
-                break;
-              }
-            } else {
-              canMakeCurrentWord = false;
-              break;
-            }
-          }
-
-          if (canMakeCurrentWord) {
-            r.add(word);
-          }
-        }
-
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           switch (selectedSize) {
@@ -67,15 +43,33 @@ class _HomePageState extends State<HomePage> {
           if (size.runtimeType == List<int>) {
             for (String word in englishWords) {
               if (word.length >= size[0] && word.length <= size[1]) {
-                r.add(word);
+                bool canMakeCurrentWord = true;
+                Map<String, int> wordMap =
+                    getCharacterCount(word.toLowerCase());
+
+                for (String letter in wordMap.keys) {
+                  if (lettersMap.containsKey(letter)) {
+                    if (wordMap[letter.toLowerCase()]! >
+                        lettersMap[letter.toLowerCase()]!) {
+                      canMakeCurrentWord = false;
+                      break;
+                    }
+                  } else {
+                    canMakeCurrentWord = false;
+                    break;
+                  }
+                }
+
+                if (canMakeCurrentWord) {
+                  r.add(word);
+                }
               }
             }
           }
         }
       }
 
-      
-        result = r;
+      result = r;
 
       return result.isNotEmpty
           ? ListView(
