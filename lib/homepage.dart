@@ -18,14 +18,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      if (letters != "") {
         Map<String, Int> lettersMap =
             getCharacterCount(letters).cast<String, Int>();
-      }
+      
 
       bool canMakeCurrentWord = true;
-            for (String character in lettersMap) {
-                int currentWordCharCount = letM.get(character);
+            for (String character in lettersMap.keys) {
+                int currentWordCharCount = lettersMap[character];
                 int lettersCharCount = countLetters.getOrDefault(character, 0);
 
                 if (currentWordCharCount > lettersCharCount) {
