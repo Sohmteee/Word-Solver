@@ -26,8 +26,8 @@ class _HomePageState extends State<HomePage> {
           bool canMakeCurrentWord = true;
           Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
 
-          for (String letter in lettersMap.keys) {
-            if (wordMap.containsKey(letter)) {
+          for (String letter in wordMap.keys) {
+            if (lettersMap.containsKey(letter)) {
               if (wordMap[letter.toLowerCase()]! > lettersMap[letter.toLowerCase()]!) {
                 canMakeCurrentWord = false;
                 break;
