@@ -1,10 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
-import 'package:path/path.dart' as p;
-
 import 'widgets/data/data.dart';
 
 class HomePage extends StatefulWidget {
