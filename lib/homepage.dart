@@ -88,8 +88,11 @@ class _HomePageState extends State<HomePage> {
 otherTextField(controller) {
   switch (controller) {
     case "Limit":
-      
-      break;
+      return SizeTextField(controller: limit, hintText: controller);
+    case "Exact Value":
+      return SizeTextField(controller: exact, hintText: controller);
+    case "All":
+      return SizeTextField(controller: all, hintText: controller);
     default:
   }
 }
