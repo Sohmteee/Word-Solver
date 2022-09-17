@@ -41,96 +41,9 @@ class _HomePageState extends State<HomePage> {
         print(size.runtimeType);
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
-
-        } else {
-        return const Center(
-          child: Text("No word matches your parameters"),
-        );
-      }
-
-        if (size.runtimeType == List<int>) {
-          for (String word in englishWords) {
-            if (word.length >= size[0] && word.length <= size[1]) {
-              bool canMakeCurrentWord = true;
-              Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
-
-              for (String letter in wordMap.keys) {
-                if (lettersMap.containsKey(letter)) {
-                  if (wordMap[letter.toLowerCase()]! >
-                      lettersMap[letter.toLowerCase()]!) {
-                    canMakeCurrentWord = false;
-                    break;
-                  }
-                } else {
-                  canMakeCurrentWord = false;
-                  break;
-                }
-              }
-
-              if (canMakeCurrentWord) {
-                r.add(word);
-              }
-            }
-            result = r;
-          }
-        } else {
-          switch (selectedSize) {
-            case "Limit":
-              for (String word in englishWords) {
-                if (word.length >= size) {
-                  bool canMakeCurrentWord = true;
-                  Map<String, int> wordMap =
-                      getCharacterCount(word.toLowerCase());
-
-                  for (String letter in wordMap.keys) {
-                    if (lettersMap.containsKey(letter)) {
-                      if (wordMap[letter.toLowerCase()]! >
-                          lettersMap[letter.toLowerCase()]!) {
-                        canMakeCurrentWord = false;
-                        break;
-                      }
-                    } else {
-                      canMakeCurrentWord = false;
-                      break;
-                    }
-                  }
-
-                  if (canMakeCurrentWord) {
-                    r.add(word);
-                  }
-                }
-                result = r;
-              }
-              break;
-            case "Exact Value":
-              for (String word in englishWords) {
-                if (word.length == size) {
-                  bool canMakeCurrentWord = true;
-                  Map<String, int> wordMap =
-                      getCharacterCount(word.toLowerCase());
-
-                  for (String letter in wordMap.keys) {
-                    if (lettersMap.containsKey(letter)) {
-                      if (wordMap[letter.toLowerCase()]! >
-                          lettersMap[letter.toLowerCase()]!) {
-                        canMakeCurrentWord = false;
-                        break;
-                      }
-                    } else {
-                      canMakeCurrentWord = false;
-                      break;
-                    }
-                  }
-
-                  if (canMakeCurrentWord) {
-                    r.add(word);
-                  }
-                }
-                result = r;
-              }
-              break;
-            case "All":
-              for (String word in englishWords) {
+          if (size.runtimeType == List<int>) {
+            for (String word in englishWords) {
+              if (word.length >= size[0] && word.length <= size[1]) {
                 bool canMakeCurrentWord = true;
                 Map<String, int> wordMap =
                     getCharacterCount(word.toLowerCase());
@@ -151,11 +64,97 @@ class _HomePageState extends State<HomePage> {
                 if (canMakeCurrentWord) {
                   r.add(word);
                 }
-
-                result = r;
               }
-              break;
+              result = r;
+            }
+          } else {
+            switch (selectedSize) {
+              case "Limit":
+                for (String word in englishWords) {
+                  if (word.length >= size) {
+                    bool canMakeCurrentWord = true;
+                    Map<String, int> wordMap =
+                        getCharacterCount(word.toLowerCase());
+
+                    for (String letter in wordMap.keys) {
+                      if (lettersMap.containsKey(letter)) {
+                        if (wordMap[letter.toLowerCase()]! >
+                            lettersMap[letter.toLowerCase()]!) {
+                          canMakeCurrentWord = false;
+                          break;
+                        }
+                      } else {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    }
+
+                    if (canMakeCurrentWord) {
+                      r.add(word);
+                    }
+                  }
+                  result = r;
+                }
+                break;
+              case "Exact Value":
+                for (String word in englishWords) {
+                  if (word.length == size) {
+                    bool canMakeCurrentWord = true;
+                    Map<String, int> wordMap =
+                        getCharacterCount(word.toLowerCase());
+
+                    for (String letter in wordMap.keys) {
+                      if (lettersMap.containsKey(letter)) {
+                        if (wordMap[letter.toLowerCase()]! >
+                            lettersMap[letter.toLowerCase()]!) {
+                          canMakeCurrentWord = false;
+                          break;
+                        }
+                      } else {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    }
+
+                    if (canMakeCurrentWord) {
+                      r.add(word);
+                    }
+                  }
+                  result = r;
+                }
+                break;
+              case "All":
+                for (String word in englishWords) {
+                  bool canMakeCurrentWord = true;
+                  Map<String, int> wordMap =
+                      getCharacterCount(word.toLowerCase());
+
+                  for (String letter in wordMap.keys) {
+                    if (lettersMap.containsKey(letter)) {
+                      if (wordMap[letter.toLowerCase()]! >
+                          lettersMap[letter.toLowerCase()]!) {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    } else {
+                      canMakeCurrentWord = false;
+                      break;
+                    }
+                  }
+
+                  if (canMakeCurrentWord) {
+                    r.add(word);
+                  }
+
+                  result = r;
+                }
+                break;
+            }
           }
+        } else {
+          return const Center(
+            child: Text("No word matches your parameters"),
+          );
         }
       } else {
         return const Center(
