@@ -46,7 +46,7 @@ Widget displayResult() {
           size = int.parse(all.text.trim());
           break;
       }
-    }
+    } 
 
     print(size.runtimeType);
 
