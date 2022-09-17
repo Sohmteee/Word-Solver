@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         )
-                      : otherTextField(selectedSize)
+                      : otherSizeTextField(selectedSize)
                 ],
               )
             ],
@@ -85,14 +85,23 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-otherTextField(controller) {
-  switch (controller) {
+otherSizeTextField(size) {
+  switch (size) {
     case "Limit":
-      return SizeTextField(controller: limit, hintText: controller);
+      return SizeTextField(
+        controller: limit,
+        hintText: size,
+      );
     case "Exact Value":
-      return SizeTextField(controller: exact, hintText: controller);
+      return SizeTextField(
+        controller: exact,
+        hintText: size,
+      );
     case "All":
-      return SizeTextField(controller: all, hintText: controller);
+      return SizeTextField(
+        controller: all,
+        hintText: size,
+      );
     default:
   }
 }
