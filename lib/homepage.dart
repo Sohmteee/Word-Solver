@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
         // }
       }
 
-      return result.isNotEmpty
+      return result.isNotEmpty && display
           ? ListView(
               children: result
                   .map(
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
 
               ElevatedButton(
                 onPressed: () {
-                  displayResult();
+                  display = true;
                 },
                 child: const Text("Generate"),
               ),
