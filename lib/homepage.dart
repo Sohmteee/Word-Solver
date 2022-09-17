@@ -14,7 +14,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    displayResult() {}
+    displayResult() {
+      result.isNotEmpty
+          ? ListView(
+              children: englishWords
+                  .map(
+                    (word) => ListTile(
+                      title: Center(
+                        child: Text(word),
+                      ),
+                    ),
+                  )
+                  .toList(),
+            )
+          : const Center(
+              child: Text("No word matches your parameters"),
+            );
+    }
 
     return Scaffold(
       body: SafeArea(
@@ -107,21 +123,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
 
               Expanded(
-                child: result.isNotEmpty
-                    ? ListView(
-                        children: englishWords
-                            .map(
-                              (word) => ListTile(
-                                title: Center(
-                                  child: Text(word),
-                                ),
-                              ),
-                            )
-                            .toList(),
-                      )
-                    : const Center(
-                        child: Text("No word matches your parameters"),
-                      ),
+                child: displayResult(),
               ),
             ],
           ),
