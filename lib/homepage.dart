@@ -94,10 +94,11 @@ otherSizeTextField(size) {
       );
     case "Exact Value":
       return SizeTextField(
+        width: 100,
         controller: exact,
         hintText: size,
       );
     default:
-      return Container();
+      return SizedBox();
   }
 }
