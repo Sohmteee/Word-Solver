@@ -23,6 +23,17 @@ class _HomePageState extends State<HomePage> {
             getCharacterCount(letters).cast<String, Int>();
       }
 
+      boolean canMakeCurrentWord = true;
+            for (Character character : currentWordMap.keySet()) {
+                int currentWordCharCount = currentWordMap.get(character);
+                int lettersCharCount = countLetters.getOrDefault(character, 0);
+
+                if (currentWordCharCount > lettersCharCount) {
+                    canMakeCurrentWord = false;
+                    break;
+                }
+            }
+
       if (letters != "") {
         switch (selectedSize) {
           case "Range":
