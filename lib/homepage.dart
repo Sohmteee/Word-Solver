@@ -26,12 +26,11 @@ class _HomePageState extends State<HomePage> {
             size = int.parse(limit.text.trim());
             break;
           case "Exact Value":
-            size = int.parse(limit.text.trim());
+            size = int.parse(exact.text.trim());
             break;
-          case "Exact Value":
-            size = int.parse(limit.text.trim());
+          case "All":
+            size = int.parse(all.text.trim());
             break;
-          default:
         }
       }
 
