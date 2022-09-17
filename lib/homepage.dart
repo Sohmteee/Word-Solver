@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
         print(size.runtimeType);
 
-        if (size.runtimeType == List) {
+        if (size.runtimeType == List<int>) {
           for (String word in englishWords) {
             if (word.length >= size[0] && word.length <= size[1]) {
               bool canMakeCurrentWord = true;
