@@ -106,13 +106,19 @@ class _HomePageState extends State<HomePage> {
 
               Expanded(
                 child: ListView(
-                  children: result.isNotEmpty ? englishWords
-                      .map(
-                        (word) => ListTile(
-                          title: Text(word),
-                        ),
-                      )
-                      .toList() : <Widget>[Center(child: Text("Nothing")],),
+                  children: result.isNotEmpty
+                      ? englishWords
+                          .map(
+                            (word) => ListTile(
+                              title: Text(word),
+                            ),
+                          )
+                          .toList()
+                      : const <Widget>[
+                          Center(
+                            child: Text("Nothing"),
+                          ),
+                        ],
                 ),
               ),
             ],
