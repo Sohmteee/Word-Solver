@@ -64,12 +64,11 @@ class _HomePageState extends State<HomePage> {
                   r.add(word);
                 }
               }
+              result = r;
             }
           } else {
             print("else block executed");
           }
-
-          result = r;
         }
       }
 
