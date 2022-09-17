@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     displayResult() {
       Map<String, int> lettersMap = getCharacterCount(letters);
+      print(letters);
       print(lettersMap);
 
       for (String word in englishWords) {
