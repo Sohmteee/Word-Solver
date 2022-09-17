@@ -23,26 +23,27 @@ class _HomePageState extends State<HomePage> {
         print(letters);
         print(lettersMap);
 
-        switch (selectedSize) {
-          case "Range":
-            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
-            break;
-          case "Limit":
-            size = int.parse(limit.text.trim());
-            break;
-          case "Exact Value":
-            size = int.parse(exact.text.trim());
-            break;
-          case "All":
-            size = int.parse(all.text.trim());
-            break;
+        if ((min.text.trim() != "") && (max.text.trim() != "")) {
+          switch (selectedSize) {
+            case "Range":
+              size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+              break;
+            case "Limit":
+              size = int.parse(limit.text.trim());
+              break;
+            case "Exact Value":
+              size = int.parse(exact.text.trim());
+              break;
+            case "All":
+              size = int.parse(all.text.trim());
+              break;
+          }
         }
 
         print(size.runtimeType);
 
         if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
           if (size.runtimeType == List<int>) {
-            
             for (String word in englishWords) {
               if (word.length >= size[0] && word.length <= size[1]) {
                 bool canMakeCurrentWord = true;
