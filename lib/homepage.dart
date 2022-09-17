@@ -89,7 +89,6 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              //textfield for the letters
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 20),
                 padding: const EdgeInsets.symmetric(
