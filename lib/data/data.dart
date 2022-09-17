@@ -18,4 +18,4 @@ String? selectedSize = sizes[0];
 String? letters = "";
 List<int> range = [];
 List<String> result = [];
-int size = 0;
+dynamic size = 0;
