@@ -17,7 +17,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
-      if (letters.length )
+      if (letters!.isNotEmpty) {
+        switch (selectedSize) {
+          case "Range":
+            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+            break;
+          case "Limit":
+            size = int.parse(limit.text.trim());
+            break;
+          case "Exact Value":
+            size = int.parse(limit.text.trim());
+            break;
+          case "Exact Value":
+            size = int.parse(limit.text.trim());
+            break;
+          default:
+        }
+      }
 
       return result.isNotEmpty
           ? ListView(
