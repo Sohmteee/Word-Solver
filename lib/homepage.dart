@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         // }
       }
 
-      return result.isNotEmpty && display
+      return result.isNotEmpty
           ? ListView(
               children: result
                   .map(
