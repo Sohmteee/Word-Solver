@@ -34,7 +34,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
         controller: widget.controller,
         autofocus: true,
         textAlign: TextAlign.center,
-        
+        keyboardType: TextInputType.,
         decoration: InputDecoration(
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
