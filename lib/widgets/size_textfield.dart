@@ -39,7 +39,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
         onChanged: (value) => setState(() {
           switch (selectedSize) {
             case "Range":
-            size = 
+              size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
               break;
             case "Limit":
               size = int.parse(limit.text.trim());
