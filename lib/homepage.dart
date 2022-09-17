@@ -17,16 +17,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    readFile() async {
-      var filePath = p.join(Directory.current.path, 'assets', 'english_words');
-      File file = File(filePath);
-      List<String> words = await file.readAsLines();
-
-      debugPrint("First word: ${words[0]}");
-    }
 
     displayResult() {}
-    readFile();
 
     return Scaffold(
       body: SafeArea(
