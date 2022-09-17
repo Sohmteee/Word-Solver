@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         )
-                      : switch
+                      : 
                 ],
               )
             ],
@@ -82,5 +82,14 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+}
+
+otherTextField() {
+  switch (expression) {
+    case value:
+      
+      break;
+    default:
   }
 }
