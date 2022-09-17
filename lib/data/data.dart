@@ -21,11 +21,6 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String letters = "";
-int? rangeMin;
-int? rangeMax;
-int? rangeLimit;
-int? rangeExact;
-int? rangeAll;
 List<String> result = [];
 dynamic size;
 
