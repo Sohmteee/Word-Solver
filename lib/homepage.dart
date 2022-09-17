@@ -24,7 +24,6 @@ class _HomePageState extends State<HomePage> {
 
         for (String word in englishWords) {
           bool canMakeCurrentWord = true;
-
           Map<String, int> wordMap = getCharacterCount(word);
 
           for (var char in lettersMap.keys) {

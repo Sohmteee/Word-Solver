@@ -15,7 +15,6 @@ List<String> sizes = [
   "Exact Value",
   "All",
 ];
-Map<String, Int> wordMap = {};
 
 String? selectedSize = sizes[0];
 String letters = "";
