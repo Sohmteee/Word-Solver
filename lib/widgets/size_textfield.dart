@@ -38,10 +38,18 @@ class _SizeTextFielddState extends State<SizeTextField> {
         keyboardType: TextInputType.number,
         onChanged: (value) => setState(() {
           switch (selectedSize) {
-            case value:
-              
+            case "Range":
+            
               break;
-            default:
+            case "Limit":
+              size = int.parse(limit.text.trim());
+              break;
+            case "Exact Value":
+              size = int.parse(exact.text.trim());
+              break;
+            case "All":
+              size = int.parse(all.text.trim());
+              break;
           }
           displayResult();
         }),
