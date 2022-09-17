@@ -21,6 +21,7 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String letters = "";
+int 
 List<String> result = [];
 dynamic size;
 
