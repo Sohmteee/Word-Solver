@@ -46,7 +46,11 @@ Widget displayResult() {
           size = int.parse(all.text.trim());
           break;
       }
-    } 
+    } else {
+        return const Center(
+          child: Text("No word matches your parameters"),
+        );
+      }
 
     print(size.runtimeType);
 
