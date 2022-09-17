@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-TextEditingController word;
+final word = TextEditingController();
 final min = TextEditingController();
 final max = TextEditingController();
 final limit = TextEditingController();
 final exact = TextEditingController();
 final all = TextEditingController();
+
 List<String> sizes = [
   "Range",
   "Limit",
