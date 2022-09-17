@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                     onChanged: (String? value) {
                       setState(() {
                         selectedSize = value;
-                        displayResult(context);
+                        displayResult();
                       });
                     },
                   ),
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  displayResult(context);
+                  displayResult();
                 },
                 child: const Text("Generate"),
               ),
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
               const Divider(),
               const SizedBox(height: 20),
               Expanded(
-                child: displayResult(context),
+                child: displayResult(),
               ),
             ],
           ),
