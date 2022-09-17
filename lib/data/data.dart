@@ -13,6 +13,7 @@ List<String> sizes = [
   "Exact Value",
   "All",
 ];
+Map<Characters, Integer> wordMap = {};
 
 String? selectedSize = sizes[0];
 String? letters = "";
