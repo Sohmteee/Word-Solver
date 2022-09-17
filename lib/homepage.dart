@@ -66,10 +66,10 @@ class _HomePageState extends State<HomePage> {
               }
             }
           }
+
+          result = r;
         }
       }
-
-      result = r;
 
       return result.isNotEmpty
           ? ListView(
