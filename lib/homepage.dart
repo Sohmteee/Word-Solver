@@ -85,10 +85,10 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-otherTextField() {
-  switch (expression) {
-    case value:
-      
+otherTextField(controller) {
+  switch (controller) {
+    case limit:
+      return SizeTextField(controller: limit, hintText: hintText)
       break;
     default:
   }
