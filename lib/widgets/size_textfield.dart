@@ -36,7 +36,9 @@ class _SizeTextFielddState extends State<SizeTextField> {
         autofocus: true,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
-        onChanged: (value) => displayResult(),
+        onChanged: (value) => setState(() {
+          displayResult();
+        }),
         decoration: InputDecoration(
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
