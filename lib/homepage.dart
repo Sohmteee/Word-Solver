@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     displayResult() {
+      wordMap.addAll(other)
       if (letters!.isNotEmpty) {
         switch (selectedSize) {
           case "Range":

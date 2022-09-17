@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 final word = TextEditingController();
@@ -13,7 +15,7 @@ List<String> sizes = [
   "Exact Value",
   "All",
 ];
-Map<Characters, Integer> wordMap = {};
+Map<Characters, Int> wordMap = {};
 
 String? selectedSize = sizes[0];
 String? letters = "";
