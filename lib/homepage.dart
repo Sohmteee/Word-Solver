@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: word,
                   autofocus: true,
-                  onChanged: () =>,
+                  onChanged: (value) => letters = value,
                   decoration: InputDecoration(
                     fillColor: Colors.green.shade100,
                     border: InputBorder.none,
