@@ -26,13 +26,16 @@ class _HomePageState extends State<HomePage> {
       for (String word in englishWords) {
         Map<String, Int> wordMap =
             getCharacterCount(word).cast<String, Int>();
-        Int? currentWordCharCount = lettersMap[character];
-        int lettersCharCount = lettersMap.getOrDefault(character, 0);
-
-        if (currentWordCharCount > lettersCharCount) {
-          canMakeCurrentWord = false;
-          break;
-        }
+        
+        if (wordMap.containsKey(char)) {
+      if (lettersMap[char]! > wordMap[char]!) {
+        canMakeCurrentWord = false;
+        break;
+      }
+    } else {
+      canMakeCurrentWord = false;
+      break;
+    }
       }
 
       if (letters != "") {
