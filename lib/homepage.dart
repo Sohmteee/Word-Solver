@@ -97,7 +97,7 @@ otherSizeTextField(size) {
       );
     case "Exact Value":
       return SizeTextField(
-        width: 100,
+        width: 120,
         controller: exact,
         hintText: size,
       );
