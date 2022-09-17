@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   bool display = false;
   @override
   Widget build(BuildContext context) {
-    displayResult() {
+    Widget displayResult() {
       if (letters != "") {
         Map<String, int> lettersMap = getCharacterCount(letters);
         print(letters);
