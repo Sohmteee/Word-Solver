@@ -22,13 +22,13 @@ class _HomePageState extends State<HomePage> {
         print(letters);
         print(lettersMap);
 
-        for (String word in englishWords.to) {
+        for (String word in englishWords) {
           bool canMakeCurrentWord = true;
-          Map<String, int> wordMap = getCharacterCount(word);
+          Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
 
           for (String letter in lettersMap.keys) {
             if (wordMap.containsKey(letter)) {
-              if (lettersMap[letter]! > wordMap[letter]!) {
+              if (lettersMap[letter.toLowerCase()]! > wordMap[letter.toLowerCase()]!) {
                 canMakeCurrentWord = false;
                 break;
               }
