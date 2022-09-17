@@ -9,7 +9,7 @@ Future<void> main() async {
 
   var filePath = p.join(Directory.current.path, 'assets', 'dictionary');
   File file = File(filePath);
-  Future<List> words = await file.readAsLinesSync();
+  List<String> words = await file.readAsLines();
 
   debugPrint("First word: ${words[0]}");
 }
