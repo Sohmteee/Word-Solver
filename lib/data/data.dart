@@ -24,7 +24,7 @@ String letters = "";
 List<String> result = [];
 dynamic size;
 
-Widget displayResult(context) {
+Widget displayResult() {
   List<String> r = [];
   if (letters != "") {
     Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
