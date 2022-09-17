@@ -67,39 +67,87 @@ class _HomePageState extends State<HomePage> {
           }
         } else {
           switch (selectedSize) {
-          case "Limit":
-            for (String word in englishWords) {
-            if (word.length >= size) {
-              bool canMakeCurrentWord = true;
-              Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
+            case "Limit":
+              for (String word in englishWords) {
+                if (word.length >= size) {
+                  bool canMakeCurrentWord = true;
+                  Map<String, int> wordMap =
+                      getCharacterCount(word.toLowerCase());
 
-              for (String letter in wordMap.keys) {
-                if (lettersMap.containsKey(letter)) {
-                  if (wordMap[letter.toLowerCase()]! >
-                      lettersMap[letter.toLowerCase()]!) {
+                  for (String letter in wordMap.keys) {
+                    if (lettersMap.containsKey(letter)) {
+                      if (wordMap[letter.toLowerCase()]! >
+                          lettersMap[letter.toLowerCase()]!) {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    } else {
+                      canMakeCurrentWord = false;
+                      break;
+                    }
+                  }
+
+                  if (canMakeCurrentWord) {
+                    r.add(word);
+                  }
+                }
+                result = r;
+              }
+              break;
+            case "Exact Value":
+              for (String word in englishWords) {
+                if (word.length == size) {
+                  bool canMakeCurrentWord = true;
+                  Map<String, int> wordMap =
+                      getCharacterCount(word.toLowerCase());
+
+                  for (String letter in wordMap.keys) {
+                    if (lettersMap.containsKey(letter)) {
+                      if (wordMap[letter.toLowerCase()]! >
+                          lettersMap[letter.toLowerCase()]!) {
+                        canMakeCurrentWord = false;
+                        break;
+                      }
+                    } else {
+                      canMakeCurrentWord = false;
+                      break;
+                    }
+                  }
+
+                  if (canMakeCurrentWord) {
+                    r.add(word);
+                  }
+                }
+                result = r;
+              }
+              break;
+            case "All":
+              for (String word in englishWords) {
+                bool canMakeCurrentWord = true;
+                Map<String, int> wordMap =
+                    getCharacterCount(word.toLowerCase());
+
+                for (String letter in wordMap.keys) {
+                  if (lettersMap.containsKey(letter)) {
+                    if (wordMap[letter.toLowerCase()]! >
+                        lettersMap[letter.toLowerCase()]!) {
+                      canMakeCurrentWord = false;
+                      break;
+                    }
+                  } else {
                     canMakeCurrentWord = false;
                     break;
                   }
-                } else {
-                  canMakeCurrentWord = false;
-                  break;
                 }
-              }
 
-              if (canMakeCurrentWord) {
-                r.add(word);
+                if (canMakeCurrentWord) {
+                  r.add(word);
+                }
+
+                result = r;
               }
-            }
-            result = r;
+              break;
           }
-            break;
-          case "Exact Value":
-            size = int.parse(exact.text.trim());
-            break;
-          case "All":
-            size = int.parse(all.text.trim());
-            break;
-        }
         }
       }
 
