@@ -42,9 +42,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-
+              const Divider(),
               const SizedBox(height: 20),
-              
+
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -87,7 +87,10 @@ class _HomePageState extends State<HomePage> {
                         )
                       : otherSizeTextField(selectedSize)
                 ],
-              )
+              ),
+
+              const Divider(),
+              const SizedBox(height: 20),
             ],
           ),
         ),
