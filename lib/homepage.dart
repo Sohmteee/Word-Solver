@@ -110,15 +110,12 @@ class _HomePageState extends State<HomePage> {
                       ? englishWords
                           .map(
                             (word) => ListTile(
-                              title: Text(word),
+                              title: Center(
+                                child: Text(word),
+                              ),
                             ),
                           )
-                          .toList()
-                      : const <Widget>[
-                          Center(
-                            child: Text("Nothing"),
-                          ),
-                        ],
+                          .toList() ,
                 ),
               ),
             ],
