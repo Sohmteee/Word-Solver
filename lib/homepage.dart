@@ -64,14 +64,14 @@ class _HomePageState extends State<HomePage> {
               break;
           }
 
-          // if (size.runtimeType == List<int>) {
-          //   for (String word in englishWords) {
-          //     if (word.length >= size[0] && word.length <= size[1]) {
+          if (size.runtimeType == List<int>) {
+            for (String word in englishWords) {
+              if (word.length >= size[0] && word.length <= size[1]) {
 
-          //       result.add(word);
-          //     }
-          //   }
-          // }
+                result.add(word);
+              }
+            }
+          }
         }
       }
 
