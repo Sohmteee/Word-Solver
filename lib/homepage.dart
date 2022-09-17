@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                           title: Text(word),
                         ),
                       )
-                      .toList(),
+                      .toList() : Center(child: Text("Nothing"),),
                 ),
               ),
             ],
