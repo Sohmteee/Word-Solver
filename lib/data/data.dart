@@ -35,10 +35,16 @@ Widget displayResult() {
         (max.text.trim() != "" && max.text.trim().isNotEmpty)) {
       switch (selectedSize) {
         case "Range":
-        if (int.tryParse(min.text.trim()) != null)
-          size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
+          if ((int.tryParse(min.text.trim()) != null) &&
+              (int.tryParse(max.text.trim()) != null)) {
+            size = [
+              int.parse(min.text.trim()),
+              int.parse(max.text.trim())
+            ];
+          }
           break;
         case "Limit":
+        if ((int.tryParse(min.text.trim()) != null))
           size = int.tryParse(limit.text.trim());
           break;
         case "Exact Value":
