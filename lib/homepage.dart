@@ -4,6 +4,7 @@ import 'package:word_solver/extra_methods.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 import 'data/data.dart';
 import 'data/english_words.dart';
+import 'widgets/display_result.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
