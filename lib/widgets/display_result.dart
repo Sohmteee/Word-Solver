@@ -62,7 +62,7 @@ Widget displayResult() {
                 }
               }
             }
-            result.add(r);
+            if (r.isNotEmpty) result.add(r);
           }
         } else {
           switch (selectedSize) {
@@ -79,7 +79,7 @@ Widget displayResult() {
                     }
                   }
                 }
-                result.add(r);
+                if (r.isNotEmpty) result.add(r);
               }
               break;
             case "Exact Value":
@@ -94,7 +94,7 @@ Widget displayResult() {
                   }
                 }
               }
-                if (r.isNotEmpty) result.add(r);
+              if (r.isNotEmpty) result.add(r);
               break;
             case "All":
               result = [];
