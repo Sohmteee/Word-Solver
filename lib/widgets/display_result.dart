@@ -122,67 +122,71 @@ Widget displayResult() {
   print(result);
 
   return result.isNotEmpty
-      ? result.length == 1 ? ListView(
-          children: result
-              .map((listOfWords) => Column(
-                    children: [
-                        child: (listOfWords.isNotEmpty)
-                            ? Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                color: Colors.yellow,
-                                height: 200,
-                                child: ListView(
-                                  children: listOfWords
-                                      .map(
-                                        (word) => ListTile(
-                                          title: Center(
-                                            child: Text(word),
+      ? result.length == 1
+          ? ListView(
+              children: result
+                  .map((listOfWords) => Column(
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 50,
+                              ),
+                              child: Expanded(
+                                child: Container(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  color: Colors.yellow,
+                                  child: ListView(
+                                    children: listOfWords
+                                        .map(
+                                          (word) => ListTile(
+                                            title: Center(
+                                              child: Text(word),
+                                            ),
                                           ),
-                                        ),
-                                      )
-                                      .toList(),
+                                        )
+                                        .toList(),
+                                  ),
                                 ),
-                              )
-                            : const SizedBox(),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ))
-              .toList(),
-        ) : ListView(
-          children: result
-              .map((listOfWords) => Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                        ),
-                        child: (listOfWords.isNotEmpty)
-                            ? Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                color: Colors.yellow,
-                                height: 200,
-                                child: ListView(
-                                  children: listOfWords
-                                      .map(
-                                        (word) => ListTile(
-                                          title: Center(
-                                            child: Text(word),
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              )
-                            : const SizedBox(),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ))
-              .toList(),
-        )
+                              )),
+                          const SizedBox(height: 20),
+                        ],
+                      ))
+                  .toList(),
+            )
+          : ListView(
+              children: result
+                  .map((listOfWords) => Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 50,
+                            ),
+                            child: (listOfWords.isNotEmpty)
+                                ? Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10),
+                                    color: Colors.yellow,
+                                    height: 200,
+                                    child: ListView(
+                                      children: listOfWords
+                                          .map(
+                                            (word) => ListTile(
+                                              title: Center(
+                                                child: Text(word),
+                                              ),
+                                            ),
+                                          )
+                                          .toList(),
+                                    ),
+                                  )
+                                : const SizedBox(),
+                          ),
+                          const SizedBox(height: 20),
+                        ],
+                      ))
+                  .toList(),
+            )
       : const Center(
           child: Text("No word matches your parameters"),
         );
