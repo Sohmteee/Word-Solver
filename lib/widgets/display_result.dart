@@ -110,7 +110,6 @@ Widget displayResult() {
                   }
                 }
                 if (r.isNotEmpty) result.add(r);
-                print(result.length);
               }
               break;
           }
