@@ -26,10 +26,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: (result.length > 1 && result.isNotEmpty)
-          ? MaterialButton(
-              onPressed: () {},
-              color: Colors.blueGrey,
-              child: const Text("Swipe horizontally to see more words"),
+          ? Align(
+              alignment: Alignment.bottomCenter,
+              child: MaterialButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                color: Colors.blueGrey,
+                child: const Text("Swipe horizontally to see more words"),
+              ),
             )
           : const SizedBox(),
       body: SafeArea(
