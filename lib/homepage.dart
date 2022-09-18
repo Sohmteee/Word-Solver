@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       letters = value;
+                      displayResult();
                     });
                   },
                   decoration: InputDecoration(
