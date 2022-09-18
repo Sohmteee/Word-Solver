@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:word_solver/data/data.dart';
 import 'package:word_solver/data/english_words.dart';
 import 'package:word_solver/extra_methods.dart';
@@ -140,7 +141,7 @@ Widget displayResult() {
             children: [
               Text(
                 "${result[index][0].length} letter words",
-                style: TextStyle(fontSize: 30)
+                style: TextStyle(fontSize: 20.sp),
               ),
               const SizedBox(height: 20),
               Expanded(
