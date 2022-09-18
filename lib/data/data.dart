@@ -31,7 +31,8 @@ Widget displayResult() {
     print(letters);
     print(lettersMap);
 
-    if ((min.text.trim() != "" && min.text.isNotEmpty()) && (max.text.trim() != "" && min.text.isNotEmpty())) {
+    if ((min.text.trim() != "" && min.text.trim().isNotEmpty) &&
+        (max.text.trim() != "" && max.text.trim().isNotEmpty)) {
       switch (selectedSize) {
         case "Range":
           size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
@@ -47,10 +48,10 @@ Widget displayResult() {
           break;
       }
     } else {
-        return const Center(
-          child: Text("No word matches your parameters"),
-        );
-      }
+      return const Center(
+        child: Text("No word matches your parameters"),
+      );
+    }
 
     print(size.runtimeType);
 
