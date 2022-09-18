@@ -89,19 +89,16 @@ Widget displayResult() {
               break;
             case "All":
               result = [];
-              for (String word) {
+              for (String word in englishWords) {
                 r = [];
-                for (String word in englishWords) {
-                  if (word.length == i) {
-                    bool can = canMakeCurrentWord(word);
+                bool can = canMakeCurrentWord(word);
 
-                    if (can) {
-                      r.add(word);
-                    }
-                  }
+                if (can) {
+                  r.add(word);
                 }
-                result.add(r);
               }
+              result.add(r);
+
               break;
           }
         }
