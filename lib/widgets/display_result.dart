@@ -132,8 +132,12 @@ Widget displayResult() {
 
   if (result.isNotEmpty) {
     if (result.length == 1) {
+      return PageView.builder(
+        itemBuilder: (context, index) {
+          return
+        },
+      );
 
-      return PageView.builder(itemBuilder: itemBuilder)
       return ListView(
         children: result
             .map((listOfWords) => Column(
