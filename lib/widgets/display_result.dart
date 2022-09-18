@@ -154,6 +154,10 @@ Widget displayResult() {
           child: Text("No word matches your parameters"),
         );
       }
+    } else {
+      return const Center(
+        child: Text("No word matches your parameters"),
+      );
     }
   } else {
     return const Center(
