@@ -12,7 +12,11 @@ Future<void> method() async {
 
 Widget displayResult() {
   List<String> r = [];
-  if (size)
+  if (size == null) {
+    return const Center(
+      child: Text("No word matches your parameters"),
+    );
+  }
   if (letters != "") {
     lettersMap = getCharacterCount(letters.toLowerCase());
     print(letters);
