@@ -120,41 +120,5 @@ Widget displayResult() {
 
   print(result);
 
-  return result.isNotEmpty
-      ? ListView(
-          children: result
-              .map((listOfWords) => Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                        ),
-                        child: (listOfWords.isNotEmpty)
-                            ? Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                color: Colors.yellow,
-                                height: 200,
-                                child: ListView(
-                                  children: listOfWords
-                                      .map(
-                                        (word) => ListTile(
-                                          title: Center(
-                                            child: Text(word),
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              )
-                            : const SizedBox(),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ))
-              .toList(),
-        )
-      : const Center(
-          child: Text("No word matches your parameters"),
-        );
+  return StreamBuilder(builder: (builder))
 }
