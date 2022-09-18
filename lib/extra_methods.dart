@@ -1,3 +1,5 @@
+import 'data/data.dart';
+
 Map<String, int> getCharacterCount(String letters) {
   Map<String, int> countLetters = {};
 
@@ -9,4 +11,23 @@ Map<String, int> getCharacterCount(String letters) {
   }
 
   return countLetters;
+}
+
+bool canMakeCurrentWord(word) {
+  bool canMakeCurrentWord = true;
+  Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
+
+  for (String letter in wordMap.keys) {
+    if (lettersMap.containsKey(letter)) {
+      if (wordMap[letter.toLowerCase()]! > lettersMap[letter.toLowerCase()]!) {
+        canMakeCurrentWord = false;
+        break;
+      }
+    } else {
+      canMakeCurrentWord = false;
+      break;
+    }
+  }
+
+  return canMakeCurrentWord;
 }

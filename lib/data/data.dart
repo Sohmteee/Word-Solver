@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:word_solver/extra_methods.dart';
-
-import 'english_words.dart';
 
 final word = TextEditingController();
 final min = TextEditingController();
@@ -18,7 +15,6 @@ List<String> sizes = [
 
 String? selectedSize = sizes[0];
 String letters = "";
-List<String> result = [];
+Map<String, int> lettersMap = {};
+List<List<String>> result = [];
 dynamic size;
-
-

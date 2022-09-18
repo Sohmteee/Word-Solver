@@ -6,7 +6,7 @@ import 'package:word_solver/extra_methods.dart';
 Widget displayResult() {
   List<String> r = [];
   if (letters != "") {
-    Map<String, int> lettersMap = getCharacterCount(letters.toLowerCase());
+    lettersMap = getCharacterCount(letters.toLowerCase());
     print(letters);
     print(lettersMap);
 
@@ -41,110 +41,66 @@ Widget displayResult() {
     if (size != null) {
       if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
         if (size.runtimeType == List<int>) {
-          for (String word in englishWords) {
-            if (word.length >= size[0] && word.length <= size[1]) {
-              bool canMakeCurrentWord = true;
-              Map<String, int> wordMap = getCharacterCount(word.toLowerCase());
+          result = [];
 
-              for (String letter in wordMap.keys) {
-                if (lettersMap.containsKey(letter)) {
-                  if (wordMap[letter.toLowerCase()]! >
-                      lettersMap[letter.toLowerCase()]!) {
-                    canMakeCurrentWord = false;
-                    break;
-                  }
-                } else {
-                  canMakeCurrentWord = false;
-                  break;
+          for (int i = size[0]; i <= size[1]; i++) {
+            r = [];
+            for (String word in englishWords) {
+              if (word.length == i) {
+                bool can = canMakeCurrentWord(word);
+
+                if (can) {
+                  r.add(word);
                 }
               }
-
-              if (canMakeCurrentWord) {
-                r.add(word);
-              }
             }
-            result = r;
+            result.add(r);
           }
         } else {
           switch (selectedSize) {
             case "Limit":
-              for (String word in englishWords) {
-                if (word.length <= size) {
-                  bool canMakeCurrentWord = true;
-                  Map<String, int> wordMap =
-                      getCharacterCount(word.toLowerCase());
+              result = [];
+              for (int i = 1; i <= size; i++) {
+                r = [];
+                for (String word in englishWords) {
+                  if (word.length == i) {
+                    bool can = canMakeCurrentWord(word);
 
-                  for (String letter in wordMap.keys) {
-                    if (lettersMap.containsKey(letter)) {
-                      if (wordMap[letter.toLowerCase()]! >
-                          lettersMap[letter.toLowerCase()]!) {
-                        canMakeCurrentWord = false;
-                        break;
-                      }
-                    } else {
-                      canMakeCurrentWord = false;
-                      break;
+                    if (can) {
+                      r.add(word);
                     }
                   }
-
-                  if (canMakeCurrentWord) {
-                    r.add(word);
-                  }
                 }
-                result = r;
+                result.add(r);
               }
               break;
             case "Exact Value":
+              result = [];
               for (String word in englishWords) {
                 if (word.length == size) {
-                  bool canMakeCurrentWord = true;
-                  Map<String, int> wordMap =
-                      getCharacterCount(word.toLowerCase());
+                  bool can = canMakeCurrentWord(word);
 
-                  for (String letter in wordMap.keys) {
-                    if (lettersMap.containsKey(letter)) {
-                      if (wordMap[letter.toLowerCase()]! >
-                          lettersMap[letter.toLowerCase()]!) {
-                        canMakeCurrentWord = false;
-                        break;
-                      }
-                    } else {
-                      canMakeCurrentWord = false;
-                      break;
-                    }
-                  }
-
-                  if (canMakeCurrentWord) {
+                  if (can) {
                     r.add(word);
                   }
                 }
-                result = r;
+                result.add(r);
               }
               break;
             case "All":
-              for (String word in englishWords) {
-                bool canMakeCurrentWord = true;
-                Map<String, int> wordMap =
-                    getCharacterCount(word.toLowerCase());
+              result = [];
+              for (int i = 1; i <= size; i++) {
+                r = [];
+                for (String word in englishWords) {
+                  if (word.length == i) {
+                    bool can = canMakeCurrentWord(word);
 
-                for (String letter in wordMap.keys) {
-                  if (lettersMap.containsKey(letter)) {
-                    if (wordMap[letter.toLowerCase()]! >
-                        lettersMap[letter.toLowerCase()]!) {
-                      canMakeCurrentWord = false;
-                      break;
+                    if (can) {
+                      r.add(word);
                     }
-                  } else {
-                    canMakeCurrentWord = false;
-                    break;
                   }
                 }
-
-                if (canMakeCurrentWord) {
-                  r.add(word);
-                }
-
-                result = r;
+                result.add(r);
               }
               break;
           }
@@ -165,16 +121,37 @@ Widget displayResult() {
     );
   }
 
+  print(result);
+
   return result.isNotEmpty
       ? ListView(
           children: result
-              .map(
-                (word) => ListTile(
-                  title: Center(
-                    child: Text(word),
-                  ),
-                ),
-              )
+              .map((listOfWords) => Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 50,
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          color: Colors.yellow,
+                          height: 200,
+                          child: ListView(
+                            children: listOfWords
+                                .map(
+                                  (word) => ListTile(
+                                    title: Center(
+                                      child: Text(word),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                    ],
+                  ))
               .toList(),
         )
       : const Center(
