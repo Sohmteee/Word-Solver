@@ -137,6 +137,7 @@ Widget displayResult() {
     return PageView.builder(
       itemCount: result.length,
       scrollDirection: Axis.horizontal,
+      onPageChanged: (value) => p,
       itemBuilder: (context, index) {
         return Scaffold(
           body: Column(
