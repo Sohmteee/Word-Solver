@@ -94,7 +94,7 @@ Widget displayResult() {
                   }
                 }
               }
-              result.add(r);
+                if (r.isNotEmpty) result.add(r);
               break;
             case "All":
               result = [];
