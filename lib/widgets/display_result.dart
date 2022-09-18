@@ -130,7 +130,7 @@ Widget displayResult() {
     );
   }
 
-  print(result);
+  print(result.length);
 
   if (result.isNotEmpty) {
     return PageView.builder(
