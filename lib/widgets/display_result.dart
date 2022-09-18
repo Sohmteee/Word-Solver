@@ -12,6 +12,7 @@ Future<void> method() async {
 
 Widget displayResult() {
   List<String> r = [];
+  if (size)
   if (letters != "") {
     lettersMap = getCharacterCount(letters.toLowerCase());
     print(letters);
