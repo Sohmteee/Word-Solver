@@ -31,19 +31,19 @@ Widget displayResult() {
     print(letters);
     print(lettersMap);
 
-    if ((min.text.trim() != "") && (max.text.trim() != "")) {
+    if ((min.text.trim() != "" ) && (max.text.trim() != "" )) {
       switch (selectedSize) {
         case "Range":
-          size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
+          size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
           break;
         case "Limit":
-          size = int.parse(limit.text.trim());
+          size = int.tryParse(limit.text.trim());
           break;
         case "Exact Value":
-          size = int.parse(exact.text.trim());
+          size = int.tryParse(exact.text.trim());
           break;
         case "All":
-          size = int.parse(all.text.trim());
+          size = int.tryParse(all.text.trim());
           break;
       }
     } else {
