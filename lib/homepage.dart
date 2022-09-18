@@ -17,7 +17,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: (result != null $$ result),
+      floatingActionButton: (result.isNotEmpty)
+          ? FloatingActionButton(onPressed: () {})
+          : const SizedBox(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -99,7 +101,6 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                
                 onPressed: () {
                   setState(() {
                     displayResult();
@@ -136,4 +137,6 @@ otherSizeTextField(size) {
         hintText: size,
       );
     default:
-      return const SizedBox();
+      return const SizedBox();
+  }
+}
