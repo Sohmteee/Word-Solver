@@ -33,7 +33,13 @@ bool canMakeCurrentWord(word) {
 }
 
 int checkLongestWordLength() {
+  int l = 0;
+
   for (var listOfWords in result) {
-    
+    for (var word in listOfWords) {
+      if (word.length > l) l = word.length;
+    }
   }
+
+  return l;
 }
