@@ -31,7 +31,7 @@ Widget displayResult() {
     print(letters);
     print(lettersMap);
 
-    if ((min.text.trim() != "" ) && (max.text.trim() != "" )) {
+    if ((min.text.trim() != "" && min.text.isNotEmpty()) && (max.text.trim() != "" && min.text.isNotEmpty())) {
       switch (selectedSize) {
         case "Range":
           size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
