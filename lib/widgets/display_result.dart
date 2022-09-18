@@ -138,7 +138,7 @@ Widget displayResult() {
         return Scaffold(
           body: Column(
             children: [
-              Text("data")
+              Text("${result[index][0].length} "),
               Expanded(
                 child: ListView(
                   children: result[index]
