@@ -131,59 +131,30 @@ Widget displayResult() {
   print(result);
 
   if (result.isNotEmpty) {
-    if (result.length != 1) {
-      return PageView.builder(
-        itemCount: result.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Scaffold(
-            body: ListView(
-              children: result[index]
-                  .map((word) => ListTile(
-                        title: Center(
-                          child: Text(word),
-                        ),
-                      ))
-                  .toList(),
-            ),
-          );
-        },
-      );
-
-    } else {
-      return ListView(
-        children: result
-            .map((listOfWords) => Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
-                      ),
-                      child: (listOfWords.isNotEmpty)
-                          ? Container(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              color: Colors.yellow,
-                              height: 200,
-                              child: ListView(
-                                children: listOfWords
-                                    .map(
-                                      (word) => ListTile(
-                                        title: Center(
-                                          child: Text(word),
-                                        ),
-                                      ),
-                                    )
-                                    .toList(),
-                              ),
-                            )
-                          : const SizedBox(),
-                    ),
-                    const SizedBox(height: 20),
-                  ],
-                ))
-            .toList(),
-      );
-    }
+    return PageView.builder(
+      itemCount: result.length,
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (context, index) {
+        return Scaffold(
+          body: Column(
+            children: [
+              Text("data")
+              Expanded(
+                child: ListView(
+                  children: result[index]
+                      .map((word) => ListTile(
+                            title: Center(
+                              child: Text(word),
+                            ),
+                          ))
+                      .toList(),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   } else {
     return const Center(
       child: Text("No word matches your parameters"),
