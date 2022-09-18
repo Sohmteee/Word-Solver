@@ -86,7 +86,6 @@ Widget displayResult() {
                   }
                 }
               }
-
               result.add(r);
               break;
             case "All":
