@@ -12,7 +12,7 @@ Future<void> method() async {
 
 Widget displayResult() {
   List<String> r = [];
-  if (letters != "" || pageIndex == null) {
+  if (letters != "" || (pageIndex > result.length)) {
     lettersMap = getCharacterCount(letters.toLowerCase());
     print(letters);
     print(lettersMap);
