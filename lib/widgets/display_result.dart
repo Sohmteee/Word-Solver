@@ -5,8 +5,13 @@ import 'package:word_solver/data/data.dart';
 import 'package:word_solver/data/english_words.dart';
 import 'package:word_solver/extra_methods.dart';
 
+Future<void> method()async {
+  await 
+}
+
 
 Widget displayResult() {
+
   List<String> r = [];
   if (letters != "") {
     lettersMap = getCharacterCount(letters.toLowerCase());
