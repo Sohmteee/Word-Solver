@@ -98,21 +98,19 @@ Widget displayResult() {
               break;
             case "All":
               result = [];
-              r = [];
-              int count = 0;
-              for (String word in englishWords) {
-                int l = word.length;
-                bool can = canMakeCurrentWord(word);
+              for (int i = 1; i <= size; i++) {
+                r = [];
+                for (String word in englishWords) {
+                  if (word.length == i) {
+                    bool can = canMakeCurrentWord(word);
 
-                if (can) {
-                  r.add(word);
+                    if (can) {
+                      r.add(word);
+                    }
+                  }
                 }
-
-                if (l > count) count = l;
+                result.add(r);
               }
-              result.add(r);
-              debugPrint(count.toString());
-
               break;
           }
         }
