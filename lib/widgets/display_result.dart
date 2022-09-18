@@ -68,7 +68,7 @@ Widget displayResult() {
           switch (selectedSize) {
             case "Limit":
               result = [];
-              for (int i = 1; i <= size; i++) {
+              for (int i = 2; i <= size; i++) {
                 r = [];
                 for (String word in englishWords) {
                   if (word.length == i) {
@@ -98,7 +98,7 @@ Widget displayResult() {
               break;
             case "All":
               result = [];
-              for (int i = 1; i <= size; i++) {
+              for (int i = 2; i <= size; i++) {
                 r = [];
                 for (String word in englishWords) {
                   if (word.length == i) {
@@ -109,7 +109,7 @@ Widget displayResult() {
                     }
                   }
                 }
-                result.add(r);
+                if (r.isNotEmpty) result.add(r);
                 print(result.length);
               }
               break;
