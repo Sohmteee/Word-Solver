@@ -133,12 +133,20 @@ Widget displayResult() {
   if (result.isNotEmpty) {
     if (result.length == 1) {
       return PageView.builder(
+        itemCount: result.length,
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Scaffold(
             body: ListView(
-              children: result[index].map((words) => ListTile(ch)),
+              children: result[index]
+                  .map((word) => ListTile(
+                        title: Center(
+                          child: Text(word),
+                        ),
+                      ))
+                  .toList(),
             ),
-          )
+          );
         },
       );
 
