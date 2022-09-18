@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:word_solver/extra_methods.dart';
@@ -44,14 +45,19 @@ Widget displayResult() {
           }
           break;
         case "Limit":
-        if ((int.tryParse(min.text.trim()) != null))
+        if ((int.tryParse(limit.text.trim()) != null)) {
           size = int.tryParse(limit.text.trim());
+        }
           break;
         case "Exact Value":
+        if ((int.tryParse(exact.text.trim()) != null)) {
           size = int.tryParse(exact.text.trim());
+        }
           break;
         case "All":
+        if ((int.tryParse(allowInteropCaptureThis.text.trim()) != null)) {
           size = int.tryParse(all.text.trim());
+        }
           break;
       }
     } else {
