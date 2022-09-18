@@ -121,6 +121,12 @@ Widget displayResult() {
   print(result);
 
   return StreamBuilder(builder: (context, snapshot) {
-    if (snapshot.hasData)
+    if () {
+      if (snapshot.hasData) {
+      
+
+    } else {
+
+    }
   });
 }
