@@ -26,7 +26,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: (result.length > 1 && result.isNotEmpty)
-          ? FloatingActionButton(onPressed: () {})
+          ? FloatingActionButton(
+              onPressed: () {},
+              Text("Swipe ")
+            )
           : const SizedBox(),
       body: SafeArea(
         child: Padding(
