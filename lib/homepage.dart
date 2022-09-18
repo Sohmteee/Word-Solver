@@ -132,6 +132,7 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: displayResult(),
               ),
+              SizedBox(height: 20.h),
             ],
           ),
         ),
