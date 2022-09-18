@@ -19,9 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    for (String word in englishWords) {
-      
-    }
+    for (String word in englishWords) {}
   }
 
   @override
