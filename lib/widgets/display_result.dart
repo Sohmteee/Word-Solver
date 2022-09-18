@@ -136,7 +136,7 @@ Widget displayResult() {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           color: Colors.yellow,
                           height: 200,
-                          child: ListView(
+                          if (listOfWords.length != 0) child:  ListView(
                             children: listOfWords
                                 .map(
                                   (word) => ListTile(
