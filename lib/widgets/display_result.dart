@@ -150,35 +150,6 @@ Widget displayResult() {
         },
       );
 
-      return ListView(
-        children: result
-            .map((listOfWords) => Column(
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                        ),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          color: Colors.yellow,
-                          height: 200,
-                          child: ListView(
-                            children: listOfWords
-                                .map(
-                                  (word) => ListTile(
-                                    title: Center(
-                                      child: Text(word),
-                                    ),
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                        )),
-                    const SizedBox(height: 20),
-                  ],
-                ))
-            .toList(),
-      );
     } else {
       return ListView(
         children: result
