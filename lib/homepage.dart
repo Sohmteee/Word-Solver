@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   displayResult();
+                  build(context);
                 },
                 child: const Text("Generate"),
               ),
