@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:word_solver/extra_methods.dart';
 
@@ -11,7 +8,6 @@ final min = TextEditingController();
 final max = TextEditingController();
 final limit = TextEditingController();
 final exact = TextEditingController();
-final all = TextEditingController();
 
 List<String> sizes = [
   "Range",
@@ -38,26 +34,18 @@ Widget displayResult() {
         case "Range":
           if ((int.tryParse(min.text.trim()) != null) &&
               (int.tryParse(max.text.trim()) != null)) {
-            size = [
-              int.parse(min.text.trim()),
-              int.parse(max.text.trim())
-            ];
+            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
           }
           break;
         case "Limit":
-        if ((int.tryParse(limit.text.trim()) != null)) {
-          size = int.tryParse(limit.text.trim());
-        }
+          if ((int.tryParse(limit.text.trim()) != null)) {
+            size = int.tryParse(limit.text.trim());
+          }
           break;
         case "Exact Value":
-        if ((int.tryParse(exact.text.trim()) != null)) {
-          size = int.tryParse(exact.text.trim());
-        }
-          break;
-        case "All":
-        if ((int.tryParse(allowInteropCaptureThis.text.trim()) != null)) {
-          size = int.tryParse(all.text.trim());
-        }
+          if ((int.tryParse(exact.text.trim()) != null)) {
+            size = int.tryParse(exact.text.trim());
+          }
           break;
       }
     } else {
@@ -68,6 +56,7 @@ Widget displayResult() {
 
     print(size.runtimeType);
 
+if (size != null)
     if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
       if (size.runtimeType == List<int>) {
         for (String word in englishWords) {
