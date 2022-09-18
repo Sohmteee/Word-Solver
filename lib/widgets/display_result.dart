@@ -103,6 +103,7 @@ Widget displayResult() {
                 if (l > count) count = l;
               }
               result.add(r);
+              print(count);
 
               break;
           }
