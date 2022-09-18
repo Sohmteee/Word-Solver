@@ -132,22 +132,25 @@ Widget displayResult() {
                         padding: const EdgeInsets.symmetric(
                           horizontal: 50,
                         ),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          color: Colors.yellow,
-                          height: 200,
-                          if (listOfWords.length != 0) child:  ListView(
-                            children: listOfWords
-                                .map(
-                                  (word) => ListTile(
-                                    title: Center(
-                                      child: Text(word),
-                                    ),
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                        ),
+                        child: (listOfWords.isNotEmpty)
+                            ? Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                color: Colors.yellow,
+                                height: 200,
+                                child: ListView(
+                                  children: listOfWords
+                                      .map(
+                                        (word) => ListTile(
+                                          title: Center(
+                                            child: Text(word),
+                                          ),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              )
+                            : const SizedBox(),
                       ),
                       const SizedBox(height: 20),
                     ],
