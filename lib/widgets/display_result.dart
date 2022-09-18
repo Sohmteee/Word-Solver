@@ -134,41 +134,41 @@ Widget displayResult() {
   print(result);
 
   if (result.isNotEmpty) {
-    try {
-      return PageView.builder(
+    return PageView.builder(
       itemCount: result.length,
       scrollDirection: Axis.horizontal,
       onPageChanged: (value) => pageIndex = value,
       itemBuilder: (context, index) {
-        return Scaffold(
-          body: Column(
-            children: [
-              Text(
-                "${result[index][0].length} letter words",
-                style: TextStyle(fontSize: 20.sp),
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView(
-                  children: result[index]
-                      .map((word) => ListTile(
-                            title: Center(
-                              child: Text(word),
-                            ),
-                          ))
-                      .toList(),
+        try {
+          return Scaffold(
+            body: Column(
+              children: [
+                Text(
+                  "${result[index][0].length} letter words",
+                  style: TextStyle(fontSize: 20.sp),
                 ),
-              ),
-            ],
-          ),
-        );
+                const SizedBox(height: 20),
+                Expanded(
+                  child: ListView(
+                    children: result[index]
+                        .map((word) => ListTile(
+                              title: Center(
+                                child: Text(word),
+                              ),
+                            ))
+                        .toList(),
+                  ),
+                ),
+              ],
+            ),
+          );
+        } catch (e) {
+          return const Center(
+            child: Text("No word matches your parameters"),
+          );
+        }
       },
     );
-    } catch (e) {
-       return const Center(
-        child: Text("No word matches your parameters"),
-      );
-    }
   } else {
     return const Center(
       child: Text("No word matches your parameters"),

@@ -31,7 +31,10 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               color: Colors.blueGrey,
-              child: const Text("Swipe horizontally to see more words"),
+              child: const Text(
+                "Swipe horizontally to see more words",
+                // style: TextStyle(color: )
+              ),
             )
           : const SizedBox(),
       body: SafeArea(
