@@ -89,7 +89,7 @@ Widget displayResult() {
               break;
             case "All":
               result = [];
-              for (int i = 1; i <= size; i++) {
+              for (String word) {
                 r = [];
                 for (String word in englishWords) {
                   if (word.length == i) {
