@@ -26,9 +26,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: (result.length > 1 && result.isNotEmpty)
-          ? FloatingActionButton(
+          ? MaterialButton(
               onPressed: () {},
-              Text("Swipe ")
+              color: Colors.blueGrey,
+              child: const Text("Swipe horizontally to see more words"),
             )
           : const SizedBox(),
       body: SafeArea(
