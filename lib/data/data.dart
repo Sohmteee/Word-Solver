@@ -19,3 +19,4 @@ String letters = "";
 Map<String, int> lettersMap = {};
 List<List<String>> result = [];
 dynamic size;
+int? pageIndex;

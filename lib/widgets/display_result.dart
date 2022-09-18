@@ -12,7 +12,7 @@ Future<void> method() async {
 
 Widget displayResult() {
   List<String> r = [];
-  if (letters != "") {
+  if (letters != "" || pageIndex == null) {
     lettersMap = getCharacterCount(letters.toLowerCase());
     print(letters);
     print(lettersMap);
@@ -137,7 +137,7 @@ Widget displayResult() {
     return PageView.builder(
       itemCount: result.length,
       scrollDirection: Axis.horizontal,
-      onPageChanged: (value) => p,
+      onPageChanged: (value) => pageIndex = value,
       itemBuilder: (context, index) {
         return Scaffold(
           body: Column(
