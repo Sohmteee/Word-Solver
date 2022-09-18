@@ -89,6 +89,7 @@ Widget displayResult() {
               break;
             case "All":
               result = [];
+              r = [];
               for (String word in englishWords) {
                 bool can = canMakeCurrentWord(word);
 
