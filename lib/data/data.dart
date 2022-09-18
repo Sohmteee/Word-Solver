@@ -35,6 +35,7 @@ Widget displayResult() {
         (max.text.trim() != "" && max.text.trim().isNotEmpty)) {
       switch (selectedSize) {
         case "Range":
+        if (int.tryParse(min.text.trim()) != null)
           size = [int.tryParse(min.text.trim()), int.tryParse(max.text.trim())];
           break;
         case "Limit":
