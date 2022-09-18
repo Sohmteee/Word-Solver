@@ -76,6 +76,7 @@ Widget displayResult() {
               break;
             case "Exact Value":
               result = [];
+              r = [];
               for (String word in englishWords) {
                 if (word.length == size) {
                   bool can = canMakeCurrentWord(word);
