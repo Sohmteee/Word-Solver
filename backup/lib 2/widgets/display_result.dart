@@ -132,7 +132,7 @@ Widget displayResult() {
                           horizontal: 50,
                         ),
                         child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           color: Colors.yellow,
                           height: 200,
                           child: ListView(
