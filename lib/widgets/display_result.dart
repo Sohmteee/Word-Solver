@@ -121,12 +121,14 @@ Widget displayResult() {
   print(result);
 
   return StreamBuilder(builder: (context, snapshot) {
-    if () {
-      if (snapshot.hasData) {
-      
+    if (snapshot.hasError){
 
     } else {
+      if (snapshot.hasData) {
 
+      } else {
+        
+      }
     }
   });
 }
