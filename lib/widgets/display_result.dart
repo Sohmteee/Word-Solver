@@ -85,8 +85,9 @@ Widget displayResult() {
                     r.add(word);
                   }
                 }
-                result.add(r);
               }
+
+              result.add(r);
               break;
             case "All":
               result = [];
