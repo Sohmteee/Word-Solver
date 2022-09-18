@@ -75,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         selectedSize = value;
                         displayResult();
+                        build(context);
                       });
                     },
                   ),
@@ -100,6 +101,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   setState(() {
                     displayResult();
+                    build(context);
                   });
                 },
                 child: const Text("Generate"),
