@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:word_solver/data/english_words.dart';
 import 'package:word_solver/extra_methods.dart';
 import 'package:word_solver/widgets/size_textfield.dart';
 import 'data/data.dart';
@@ -14,6 +15,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool display = false;
+
+  @override
+  void initState() {
+    super.initState();
+    for (String word in englishWords) {
+      
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
