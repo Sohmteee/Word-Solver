@@ -120,5 +120,7 @@ Widget displayResult() {
 
   print(result);
 
-  return StreamBuilder(builder: (builder))
+  return StreamBuilder(builder: (context, snapshot) {
+    if (snapshot.hasData)
+  });
 }
