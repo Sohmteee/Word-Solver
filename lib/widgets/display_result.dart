@@ -134,7 +134,11 @@ Widget displayResult() {
     if (result.length == 1) {
       return PageView.builder(
         itemBuilder: (context, index) {
-          return
+          return Scaffold(
+            body: ListView(
+              children: ,
+            ),
+          )
         },
       );
 
