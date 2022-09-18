@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:word_solver/data/data.dart';
 import 'package:word_solver/data/english_words.dart';
