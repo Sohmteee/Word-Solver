@@ -91,12 +91,16 @@ Widget displayResult() {
             case "All":
               result = [];
               r = [];
+              int count = 0;
               for (String word in englishWords) {
+                int l = word.length;
                 bool can = canMakeCurrentWord(word);
 
                 if (can) {
                   r.add(word);
                 }
+
+                if (l > count) count = l;
               }
               result.add(r);
 
@@ -124,74 +128,71 @@ Widget displayResult() {
   if (result.isNotEmpty) {
     if (result.length == 1) {
       return ListView(
-          children: result
-              .map((listOfWords) => Column(
-                    children: [
-                      Padding(
+        children: result
+            .map((listOfWords) => Column(
+                  children: [
+                    Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 50,
                         ),
                         child: Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                color: Colors.yellow,
-                                height: 200,
-                                child: ListView(
-                                  children: listOfWords
-                                      .map(
-                                        (word) => ListTile(
-                                          title: Center(
-                                            child: Text(word),
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              )
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ))
-              .toList(),
-        );
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          color: Colors.yellow,
+                          height: 200,
+                          child: ListView(
+                            children: listOfWords
+                                .map(
+                                  (word) => ListTile(
+                                    title: Center(
+                                      child: Text(word),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        )),
+                    const SizedBox(height: 20),
+                  ],
+                ))
+            .toList(),
+      );
     } else {
       return ListView(
-          children: result
-              .map((listOfWords) => Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 50,
-                        ),
-                        child: (listOfWords.isNotEmpty)
-                            ? Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                color: Colors.yellow,
-                                height: 200,
-                                child: ListView(
-                                  children: listOfWords
-                                      .map(
-                                        (word) => ListTile(
-                                          title: Center(
-                                            child: Text(word),
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              )
-                            : const SizedBox(),
+        children: result
+            .map((listOfWords) => Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 50,
                       ),
-                      const SizedBox(height: 20),
-                    ],
-                  ))
-              .toList(),
-        );
+                      child: (listOfWords.isNotEmpty)
+                          ? Container(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              color: Colors.yellow,
+                              height: 200,
+                              child: ListView(
+                                children: listOfWords
+                                    .map(
+                                      (word) => ListTile(
+                                        title: Center(
+                                          child: Text(word),
+                                        ),
+                                      ),
+                                    )
+                                    .toList(),
+                              ),
+                            )
+                          : const SizedBox(),
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ))
+            .toList(),
+      );
     }
   } else {
     return const Center(
-          child: Text("No word matches your parameters"),
-        );
+      child: Text("No word matches your parameters"),
+    );
   }
 }
