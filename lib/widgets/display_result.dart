@@ -136,9 +136,12 @@ Widget displayResult() {
         itemBuilder: (context, index) {
           return Scaffold(
             body: ListView(
-              children: ,
+              children: result[index].map((words) => ListTile(
+                      title: Center(
+                    child: Text(word),
+                  ))),
             ),
-          )
+          );
         },
       );
 
