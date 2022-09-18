@@ -5,6 +5,7 @@ final min = TextEditingController();
 final max = TextEditingController();
 final limit = TextEditingController();
 final exact = TextEditingController();
+final pageController
 
 List<String> sizes = [
   "Range",
