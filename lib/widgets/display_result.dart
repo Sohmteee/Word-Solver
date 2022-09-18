@@ -36,8 +36,6 @@ Widget displayResult() {
       );
     }
 
-    print(size.runtimeType);
-
     if (size != null) {
       if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
         if (size.runtimeType == List<int>) {
