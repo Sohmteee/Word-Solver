@@ -131,7 +131,7 @@ Widget displayResult() {
   print(result);
 
   if (result.isNotEmpty) {
-    if (result.length == 1) {
+    if (result.length != 1) {
       return PageView.builder(
         itemCount: result.length,
         scrollDirection: Axis.horizontal,
