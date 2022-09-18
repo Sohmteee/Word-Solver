@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
                     setState(() {
                       letters = value;
                       displayResult();
+                      build(context);
                     });
                   },
                   decoration: InputDecoration(
