@@ -110,6 +110,7 @@ Widget displayResult() {
                   }
                 }
                 result.add(r);
+                print(result.length);
               }
               break;
           }
