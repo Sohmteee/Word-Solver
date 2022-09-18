@@ -87,7 +87,7 @@ Widget displayResult() {
           switch (selectedSize) {
             case "Limit":
               for (String word in englishWords) {
-                if (word.length >= size) {
+                if (word.length <= size) {
                   bool canMakeCurrentWord = true;
                   Map<String, int> wordMap =
                       getCharacterCount(word.toLowerCase());
