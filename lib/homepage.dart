@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: (result.isNotEmpty)
+      floatingActionButton: (result.length > 1 && result.isNotEmpty)
           ? FloatingActionButton(onPressed: () {})
           : const SizedBox(),
       body: SafeArea(
