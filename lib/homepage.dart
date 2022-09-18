@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.blueGrey,
               child: const Text(
                 "Swipe horizontally to see more words",
-                // style: TextStyle(color: )
+                style: TextStyle(color: Colors.white),
               ),
             )
           : const SizedBox(),
