@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: (result != null $$ result),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -135,6 +136,4 @@ otherSizeTextField(size) {
         hintText: size,
       );
     default:
-      return const SizedBox();
-  }
-}
+      return const SizedBox();
