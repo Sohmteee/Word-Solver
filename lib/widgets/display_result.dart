@@ -36,6 +36,9 @@ Widget displayResult() {
             size = int.tryParse(exact.text.trim());
           }
           break;
+        default:
+          size = 31;
+          break;
       }
     } else {
       return const Center(
