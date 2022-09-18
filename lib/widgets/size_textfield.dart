@@ -28,7 +28,7 @@ class _SizeTextFielddState extends State<SizeTextField> {
         horizontal: 20,
       ),
       decoration: BoxDecoration(
-        color: Colors.grey.shade100,
+        color: Colors.blueGrey.shade100,
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
