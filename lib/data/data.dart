@@ -18,4 +18,4 @@ String? selectedSize = sizes[0];
 String letters = "";
 Map<String, int> lettersMap = {};
 List<List<String>> result = [];
-// dynamic size;
+dynamic size;
