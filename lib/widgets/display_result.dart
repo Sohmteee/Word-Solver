@@ -11,7 +11,6 @@ Future<void> method() async {
 }
 
 Widget displayResult() {
-  
   List<String> r = [];
   if (letters != "") {
     lettersMap = getCharacterCount(letters.toLowerCase());
@@ -19,9 +18,9 @@ Widget displayResult() {
     print(lettersMap);
 
     if (((min.text.trim() != "" && min.text.trim().isNotEmpty) &&
-        (max.text.trim() != "" && max.text.trim().isNotEmpty)) || 
-        (limit.text.trim() != "" && limit.text.trim().isNotEmpty)  || 
-        (exact.text.trim() != "" && exact.text.trim().isNotEmpty) ) {
+            (max.text.trim() != "" && max.text.trim().isNotEmpty)) ||
+        (limit.text.trim() != "" && limit.text.trim().isNotEmpty) ||
+        (exact.text.trim() != "" && exact.text.trim().isNotEmpty)) {
       switch (selectedSize) {
         case "Range":
           if ((int.tryParse(min.text.trim()) != null) &&
@@ -134,7 +133,6 @@ Widget displayResult() {
   }
 
   print(result.length);
-
 
   if (result.isNotEmpty) {
     return PageView.builder(
