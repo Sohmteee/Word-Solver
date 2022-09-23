@@ -11,6 +11,7 @@ Future<void> method() async {
 }
 
 Widget displayResult() {
+  
   List<String> r = [];
   if (letters != "") {
     lettersMap = getCharacterCount(letters.toLowerCase());
@@ -131,6 +132,7 @@ Widget displayResult() {
   }
 
   print(result.length);
+
 
   if (result.isNotEmpty) {
     return PageView.builder(
