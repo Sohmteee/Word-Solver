@@ -20,7 +20,8 @@ Widget displayResult() {
 
     if (((min.text.trim() != "" && min.text.trim().isNotEmpty) &&
         (max.text.trim() != "" && max.text.trim().isNotEmpty)) || 
-        (limit.text.trim() != "" && limit.text.trim().isNotEmpty)  || (exact.text.trim() != "" && exact.text.trim().isNotEmpty) ) {
+        (limit.text.trim() != "" && limit.text.trim().isNotEmpty)  || 
+        (exact.text.trim() != "" && exact.text.trim().isNotEmpty) ) {
       switch (selectedSize) {
         case "Range":
           if ((int.tryParse(min.text.trim()) != null) &&
