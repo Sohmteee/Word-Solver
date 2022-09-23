@@ -19,7 +19,7 @@ Widget displayResult() {
     print(lettersMap);
 
     if (((min.text.trim() != "" && min.text.trim().isNotEmpty) &&
-        (max.text.trim() != "" && max.text.trim().isNotEmpty)) || ((limit.text.trim() != "" && limit.text.trim().isNotEmpty))) {
+        (max.text.trim() != "" && max.text.trim().isNotEmpty)) || (limit.text.trim() != "" && limit.text.trim().isNotEmpty)  || (limit.text.trim() != "" && limit.text.trim().isNotEmpty)) {
       switch (selectedSize) {
         case "Range":
           if ((int.tryParse(min.text.trim()) != null) &&
