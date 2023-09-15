@@ -2,176 +2,149 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:word_solver/data/data.dart';
-import 'package:word_solver/data/english_words.dart';
-import 'package:word_solver/extra_methods.dart';
+import 'package:provider/provider.dart';
+import 'package:word_solver/providers/word_provider.dart';
 
-Future<void> method() async {
-  print("Hello World");
+import '../data/data.dart';
+import 'circle_tab_indicator.dart';
+
+class DisplayResult extends StatefulWidget {
+  const DisplayResult({super.key});
+
+  @override
+  State<DisplayResult> createState() => _DisplayResultState();
 }
 
-Widget displayResult() {
-  List<String> r = [];
-  if (letters != "") {
-    lettersMap = getCharacterCount(letters.toLowerCase());
-    print(letters);
-    print(lettersMap);
+class _DisplayResultState extends State<DisplayResult>
+    with TickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 1, vsync: this);
+  }
 
-    if (((min.text.trim() != "" && min.text.trim().isNotEmpty) &&
-            (max.text.trim() != "" && max.text.trim().isNotEmpty)) ||
-        (limit.text.trim() != "" && limit.text.trim().isNotEmpty) ||
-        (exact.text.trim() != "" && exact.text.trim().isNotEmpty)) {
-      switch (selectedSize) {
-        case "Range":
-          if ((int.tryParse(min.text.trim()) != null) &&
-              (int.tryParse(max.text.trim()) != null)) {
-            size = [int.parse(min.text.trim()), int.parse(max.text.trim())];
-          }
-          break;
-        case "Limit":
-          if ((int.tryParse(limit.text.trim()) != null)) {
-            size = int.tryParse(limit.text.trim());
-          }
-          break;
-        case "Exact Value":
-          if ((int.tryParse(exact.text.trim()) != null)) {
-            size = int.tryParse(exact.text.trim());
-          }
-          break;
-        default:
-          size = 31;
-          break;
-      }
-    } else {
-      return const Center(
-        child: Text("No word matches your parameters"),
-      );
-    }
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
-    if (size != null) {
-      if ((size.runtimeType == List<int>) || (size.runtimeType == int)) {
-        if (size.runtimeType == List<int>) {
-          result = [];
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<WordProvider>(builder: (context, wordProvider, _) {
+      if (wordProvider.letters.trim() != "") {
+        wordProvider.letters = wordProvider.letters.replaceAll(" ", "");
 
-          for (int i = size[0]; i <= size[1]; i++) {
-            r = [];
-            for (String word in englishWords) {
-              if (word.length == i) {
-                bool can = canMakeCurrentWord(word);
+        wordProvider.lettersMap =
+            wordProvider.getCharacterCount(wordProvider.letters.toLowerCase());
+        print(wordProvider.letters);
+        print(wordProvider.lettersMap);
 
-                if (can) {
-                  r.add(word);
-                }
-              }
-            }
-            if (r.isNotEmpty) result.add(r);
+        if (!wordProvider.validSize()) {
+          debugPrint("Valid Size: ${wordProvider.validSize()}");
+          return const Center(
+            child: Text("No word matches your parameters"),
+          );
+        }
+
+        if (wordProvider.size != null) {
+          debugPrint("Size: ${wordProvider.size}");
+          if ((wordProvider.size is List<int>) || (wordProvider.size is int)) {
+            wordProvider.computeResult();
+          } else {
+            return const Center(
+              child: Text("No word matches your parameters"),
+            );
           }
         } else {
-          switch (selectedSize) {
-            case "Limit":
-              result = [];
-              for (int i = 2; i <= size; i++) {
-                r = [];
-                for (String word in englishWords) {
-                  if (word.length == i) {
-                    bool can = canMakeCurrentWord(word);
-
-                    if (can) {
-                      r.add(word);
-                    }
-                  }
-                }
-                if (r.isNotEmpty) result.add(r);
-              }
-              break;
-            case "Exact Value":
-              result = [];
-              r = [];
-              for (String word in englishWords) {
-                if (word.length == size) {
-                  bool can = canMakeCurrentWord(word);
-
-                  if (can) {
-                    r.add(word);
-                  }
-                }
-              }
-              if (r.isNotEmpty) result.add(r);
-              break;
-            case "All":
-              result = [];
-              for (int i = 2; i <= size; i++) {
-                r = [];
-                for (String word in englishWords) {
-                  if (word.length == i) {
-                    bool can = canMakeCurrentWord(word);
-
-                    if (can) {
-                      r.add(word);
-                    }
-                  }
-                }
-                if (r.isNotEmpty) result.add(r);
-              }
-              break;
-          }
+          return const Center(
+            child: Text("No word matches your parameters"),
+          );
         }
       } else {
         return const Center(
           child: Text("No word matches your parameters"),
         );
       }
-    } else {
-      return const Center(
-        child: Text("No word matches your parameters"),
-      );
-    }
-  } else {
-    return const Center(
-      child: Text("No word matches your parameters"),
-    );
-  }
 
-  print(result.length);
+      if (wordProvider.result.isNotEmpty) {
+        tabController =
+            TabController(length: wordProvider.result.length, vsync: this);
 
-  if (result.isNotEmpty) {
-    return PageView.builder(
-      itemCount: result.length,
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) {
-        try {
-          return Scaffold(
-            body: Column(
-              children: [
-                Text(
-                  "${result[index][0].length} letter words",
-                  style: TextStyle(fontSize: 20.sp),
-                ),
-                const SizedBox(height: 20),
-                Expanded(
-                  child: ListView(
-                    children: result[index]
-                        .map((word) => ListTile(
-                              title: Center(
-                                child: Text(word),
+        return Column(
+          children: [
+            TabBar(
+              tabs: wordProvider.result
+                  .map((nLetterWords) => Tab(
+                        child: Column(
+                          children: [
+                            Text(
+                              "${nLetterWords[0].length} letter words",
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
                               ),
-                            ))
-                        .toList(),
-                  ),
-                ),
-              ],
+                            ),
+                            Text(
+                              "(${nLetterWords.length})",
+                              style: const TextStyle(),
+                            ),
+                          ],
+                        ),
+                      ))
+                  .toList(),
+              controller: tabController,
+              isScrollable: true,
+              physics: const BouncingScrollPhysics(),
+              labelColor: Colors.blueGrey,
+              unselectedLabelColor: Colors.blueGrey.withOpacity(0.3),
+              indicator: const CircleTabIndicator(
+                color: Colors.blueGrey,
+              ),
+              splashFactory: NoSplash.splashFactory,
+              overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                (Set<MaterialState> states) {
+                  return states.contains(MaterialState.focused)
+                      ? null
+                      : Colors.transparent;
+                },
+              ),
             ),
-          );
-        } catch (e) {
-          return const Center(
-            child: Text("No word matches your parameters"),
-          );
-        }
-      },
-    );
-  } else {
-    return const Center(
-      child: Text("No word matches your parameters"),
-    );
+            SizedBox(height: 10.h),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                physics: const BouncingScrollPhysics(),
+                children: wordProvider.result.map((result) {
+                  return ListView(
+                    physics: const BouncingScrollPhysics(),
+                    children: result.map((word) {
+                      return ListTile(
+                        dense: true,
+                        leading: Text(
+                          (result.indexOf(word) + 1).toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        title: Text(
+                          word,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                }).toList(),
+              ),
+            ),
+          ],
+        );
+      } else {
+        return const Center(
+          child: Text("No word matches your parameters"),
+        );
+      }
+    });
   }
 }

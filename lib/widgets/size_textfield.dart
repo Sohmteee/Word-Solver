@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'display_result.dart';
 
 class SizeTextField extends StatefulWidget {
   const SizeTextField({
@@ -8,11 +7,17 @@ class SizeTextField extends StatefulWidget {
     required this.controller,
     required this.hintText,
     this.width = 80,
+    this.focusNode,
+    this.onSubmitted,
+    this.textInputAction,
   }) : super(key: key);
 
   final TextEditingController controller;
   final String hintText;
   final double width;
+  final FocusNode? focusNode;
+  final Function(String)? onSubmitted;
+  final TextInputAction? textInputAction;
 
   @override
   State<SizeTextField> createState() => _SizeTextFielddState();
@@ -32,19 +37,17 @@ class _SizeTextFielddState extends State<SizeTextField> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
+        focusNode: widget.focusNode,
         controller: widget.controller,
         autofocus: true,
         textAlign: TextAlign.center,
+        textInputAction: widget.textInputAction,
         keyboardType: TextInputType.number,
-        onChanged: (value) => setState(() {
-          
-          displayResult();
-          build(context);
-        }),
+        onChanged: (value) => setState(() {}),
+        onSubmitted: (value) => widget.onSubmitted,
         decoration: InputDecoration(
           fillColor: Colors.green.shade100,
           border: InputBorder.none,
-          hintText: widget.hintText,
           labelText: widget.hintText,
         ),
       ),

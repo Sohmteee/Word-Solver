@@ -1,9 +1,18 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'homepage.dart';
+import 'providers/word_provider.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => WordProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +24,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       builder: (_, child) {
         return MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Word Solver',
           theme: ThemeData(
             primarySwatch: Colors.blueGrey,
             fontFamily: "Montserrat",
