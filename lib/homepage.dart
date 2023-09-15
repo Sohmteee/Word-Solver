@@ -71,50 +71,66 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 20),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                  ),
+                  padding: EdgeInsets.only(left: 20.w),
                   decoration: BoxDecoration(
                     color: Colors.blueGrey.shade100,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(30.sp),
                   ),
-                  child: EasyAutocomplete(
-                    focusNode: lettersFocus,
-                    controller: wordProvider.word,
-                    autofocus: true,
-                    textCapitalization: TextCapitalization.sentences,
-                    suggestions: englishWords,
-                    suggestionTextStyle: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey,
-                    ),
-                    onChanged: (value) {
-                      setState(() {
-                        // lettersHaveChanged = true;
-                        wordProvider.letters = value;
-                      });
-                    },
-                    onSubmitted: (value) {
-                      switch (wordProvider.selectedSize) {
-                        case "Range":
-                          FocusScope.of(context).requestFocus(minFocus);
-                          break;
-                        case "Limit":
-                          FocusScope.of(context).requestFocus(limitFocus);
-                          break;
-                        case "Exact Value":
-                          FocusScope.of(context).requestFocus(exactFocus);
-                          break;
-                        default:
-                          break;
-                      }
-                    },
-                    decoration: InputDecoration(
-                      fillColor: Colors.green.shade100,
-                      border: InputBorder.none,
-                      hintText: "Type in a bunch of letters",
-                      hintStyle: TextStyle(fontSize: 16.sp),
-                    ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: EasyAutocomplete(
+                          focusNode: lettersFocus,
+                          cursorColor: Colors.blueGrey,
+                          controller: wordProvider.word,
+                          autofocus: true,
+                          textCapitalization: TextCapitalization.sentences,
+                          suggestions: englishWords,
+                          suggestionTextStyle: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.grey,
+                          ),
+                          onChanged: (value) {
+                            setState(() {
+                              // lettersHaveChanged = true;
+                              wordProvider.letters = value;
+                            });
+                          },
+                          onSubmitted: (value) {
+                            switch (wordProvider.selectedSize) {
+                              case "Range":
+                                FocusScope.of(context).requestFocus(minFocus);
+                                break;
+                              case "Limit":
+                                FocusScope.of(context).requestFocus(limitFocus);
+                                break;
+                              case "Exact Value":
+                                FocusScope.of(context).requestFocus(exactFocus);
+                                break;
+                              default:
+                                break;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            fillColor: Colors.green.shade100,
+                            border: InputBorder.none,
+                            hintText: "Type in a bunch of letters",
+                            hintStyle: TextStyle(fontSize: 16.sp),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.clear,
+                          size: 20.sp,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            wordProvider.word.clear();
+                          });
+                        },
+                      )
+                    ],
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -131,7 +147,6 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     DropdownButton(
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
-                      borderRadius: BorderRadius.circular(10),
                       value: wordProvider.selectedSize,
                       underline: const SizedBox(),
                       items: wordProvider.sizes
@@ -174,6 +189,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.sp),
+                    ),
+                  ),
                   onPressed: () {
                     setState(() {
                       FocusScope.of(context).unfocus();
